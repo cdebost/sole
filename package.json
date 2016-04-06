@@ -1,0 +1,19 @@
+{
+  "name": "sole",
+  "version": "0.1.0",
+  "dependencies": {
+    "montage": "cdebost/montage#loader",
+    "digit": "montagejs/digit#master",
+    "jquery": "~1.11.2"
+  },
+  "devDependencies": {
+    "montage-testing": "~0.4.0"
+  },
+  "exclude": [
+    "run-tests.html",
+    "test"
+  ],
+  "bundle": [
+    "ui/main.reel"
+  ]
+}
