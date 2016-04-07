@@ -1,1 +1,1189 @@
 .Main {}
+
+.app {
+    box-sizing:border-box;
+    width:150px;
+    height:150px;
+    background-size:100px 100px;
+    background-position:25px 25px;
+    background-repeat:no-repeat;
+//background-color:rgba(100,100,100,1.0);
+    margin-bottom:0px;
+    cursor:pointer;
+    padding-left:160px;
+    padding-top:40px;
+    transition:all .3s ease-in;
+}
+
+.data_cont {
+    box-sizing:border-box;
+    color:rgba(255,255,255,1.0);
+    font-weight:bold;
+    font-size:14px;
+    padding:5px;
+    width:100px;
+    margin-bottom:20px;
+    border:1px solid black;
+    border-radius:10px;
+
+}
+.pron_cont {
+    position:absolute;
+    bottom:-12px;
+    left:calc(50% - 50px);
+    box-sizing:border-box;
+    color:rgba(255,255,255,1.0);
+    font-weight:bold;
+    font-size:16px;
+    padding:5px;
+    text-align:center;
+    width:100px;
+    margin-bottom:20px;
+//  border:1px solid black;
+    border-radius:10px;
+
+}
+.heel_cont {
+    position:absolute;
+    left:27px;
+    bottom:65px;
+    box-sizing:border-box;
+    color:rgba(255,255,255,1.0);
+    font-weight:bold;
+    font-size:14px;
+    padding:5px;
+    padding-top:10px;
+    padding-left:0px;
+    padding-right:0px;
+    width:80px;
+    height:80px;
+    border-radius:40px;
+    dtom:20px;
+    border:2px solid rgba(255,255,255,.3);
+    background-color:rgba(255,255,255,.1);
+
+}
+.accel {
+    position:absolute;
+    height:5px;
+    width:64px;
+    right:0px;
+    bottom:0px;
+    background-color:red;
+    transform-origin:100% 100%;
+    transform:translateY(0px);
+
+}
+.fore_cont {
+    position:absolute;
+    left:50px;
+    top:60px;
+    box-sizing:border-box;
+    color:rgba(255,255,255,1.0);
+    font-weight:bold;
+    font-size:14px;
+    padding:5px;
+    padding-top:10px;
+    padding-left:0px;
+    padding-right:0px;
+    width:80px;
+    height:80px;
+    border-radius:40px;
+    margin-bottom:20px;
+    border:2px solid rgba(255,255,255,.3);
+    background-color:rgba(255,255,255,.1);
+
+}
+.pressure_display {
+    box-sizing:border-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size:20px;
+
+
+}
+
+.data_title {
+    box-sizing:border-box;
+    margin-bottom:5px;
+    color:rgba(255,255,255,.6);
+
+}
+
+.data_display {
+    box-sizing:border-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+
+}
+
+.data_duration {
+    box-sizing:border-box;
+    position:relative;
+    width:calc(100% - 40px);
+    text-align:right;
+    top:-25px;
+    right:10px;
+    margin-bottom:5px;
+    color:rgba(255,255,255,.6);
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+
+}
+
+.run_history {
+    display:flex;
+    align-content:flex-start;
+    justify-content:center;
+    width:360px;
+    height:auto;
+    align-items:flex-start;
+    flex-direction:column;
+    flex-wrap:wrap;
+    text-align:center;
+    background-color:black;
+    z-index:100px;
+
+}
+
+.foot_outer {
+    width:100%;
+    height:auto;
+    position:relative;
+    ipadding-left:300px;
+    display:flex;
+    overflow:visible;
+    align-content:flex-start;
+    justify-content:center;
+    align-items:flex-start;
+    flex-direction:row;
+    flex-wrap:nowrap;
+    text-align:center;
+
+
+}
+
+
+.sole_cont {
+    position:relative;
+    margin:0px;
+    padding:0px;
+
+
+}
+.foot_cont {
+    display:flex;
+    position:relative;
+    align-content:flex-start;
+    justify-content:center;
+    width:410px;
+    iheight:100%;
+    background-color:black;
+    align-items:center;
+    flex-direction:column;
+    flex-wrap:wrap;
+    text-align:center;
+
+}
+.heel {
+    margin-top:20px;
+    width:200;
+    height:140px;
+    position:relative;
+    overflow:hidden;
+    display:inline-block;
+    iborder:1px solid blue;
+//background-color:blue;
+
+}
+.foot {
+    margin-top:20px;
+    width:200;
+    height:460px;
+    position:relative;
+    overflow:visible;
+    display:inline-block;
+// border:1px solid blue;
+//background-color:blue;
+
+}
+.clock {
+    height:100px;
+    position:relative;
+    overflow:visible;
+    font-size:24px;
+    font-family:sans-serif;
+    text-align:center;
+    color:rgba(255,255,255,1.0);
+    margin-bottom:30px;
+    margin-top:20px;
+}
+.groundb {
+    box-sizing:border-box;
+    position:relative;
+    width:400px;
+    height:300px;
+    background-image:url(/assets/beach.jpg);
+    background-size:400px 300px;
+    background-repeat:repeat-x;
+    overflow:hidden;
+    border-radius:10px;
+    margin:5px;
+
+
+}
+
+.ground {
+    position:absolute;
+    top:158px;
+    left:0px;
+    width:400px;
+    height:142px;
+    background-image:url(/assets/ground3.png);
+    background-size:400px 142px;
+    background-repeat:repeat-x;
+
+
+}
+.spacer {
+    height:0px;
+
+}
+
+.go {
+    background-image:-webkit-linear-gradient(bottom, rgba(0,0,0,1.0) 0%, rgba(49,160,240,.5) 100%);
+    border:2px solid rgba(49,160,240,.6);
+    box-sizing:border-box;
+    height:60px;
+    width:60px;
+    position:relative;
+    overflow:visible;
+    font-size:30px;
+    line-height:60px;
+    font-family:sans-serif;
+    text-align:center;
+    color:rgba(255,255,255,1.0);
+    margin-bottom:30px;
+    margin-top:20px;
+    border-radius:30px;
+    cursor:pointer;
+}
+.go:before {
+    content:"GO";
+    position:absolute;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    display:block
+    text-align:center;
+    line-height:60px;
+    font-size:30px;
+}
+.go:hover {
+    border:2px solid rgba(255,255,255,.6);
+
+}
+
+.pause {
+    box-sizing:border-box;
+    height:60px;
+    width:60px;
+    position:relative;
+    overflow:visible;
+    font-size:15px;
+    line-height:60px;
+    font-family:sans-serif;
+    text-align:center;
+    color:rgba(255,255,255,1.0);
+    margin-bottom:30px;
+    margin-top:20px;
+    border-radius:30px;
+    border:2px solid rgba(255,255,0,1.0);
+    cursor:pointer;
+}
+
+
+.pause:before {
+    content:"PAUSE";
+    position:absolute;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    display:block
+    text-align:center;
+    line-height:60px;
+    font-size:15px;
+}
+
+.pause:hover {
+    border:2px solid rgba(255,0,0,1.0);
+
+}
+
+.runstepstitle {
+    position:absolute;
+    bottom:46px;
+    left:0px;
+    padding-left:15px;
+    margin-top:3px;
+    text-align:left;
+    font-size:12px;
+    color:rgba(255,255,255,1.0);
+    font-weight:bold;
+    text-shadow:0 0 4px #000000;
+
+}
+
+.runsteps {
+    position:absolute;
+    bottom:30px;
+    left:0px;
+    padding-left:15px;
+    margin-top:3px;
+    text-align:left;
+    font-size:16px;
+    color:rgba(255,255,255,1.0);
+    font-weight:bold;
+    text-shadow:0 0 4px #000000;
+
+}
+
+.runsteps2 {
+    position:absolute;
+    bottom:30px;
+    left:50px;
+    padding-left:15px;
+    margin-top:3px;
+    text-align:left;
+    font-size:16px;
+    color:rgba(255,255,255,1.0);
+    font-weight:bold;
+    text-shadow:0 0 4px #000000;
+
+}
+
+.runsteps3 {
+    position:absolute;
+    bottom:30px;
+    left:120px;
+    padding-left:15px;
+    margin-top:3px;
+    text-align:left;
+    font-size:16px;
+    color:rgba(255,255,255,1.0);
+    font-weight:bold;
+    text-shadow:0 0 4px #000000;
+
+}
+
+
+.runspmtitle {
+    position:absolute;
+    bottom:46px;
+    left:50px;
+    padding-left:15px;
+    margin-top:3px;
+    text-align:left;
+    font-size:12px;
+    color:rgba(255,255,255,1.0);
+    font-weight:bold;
+    text-shadow:0 0 4px #000000;
+
+}
+
+.runcadtitle {
+    position:absolute;
+    bottom:46px;
+    left:117px;
+    padding-left:15px;
+    margin-top:3px;
+    text-align:left;
+    font-size:12px;
+    color:rgba(255,255,255,1.0);
+    font-weight:bold;
+    text-shadow:0 0 4px #000000;
+
+}
+@media screen and (max-width: 800px) {
+    .spacer {
+        height:375px;
+
+    }
+    .foot {
+        transform-origin:50% 0%;
+        transform:scale(.8);
+        overflow:visible;
+        iheight:200px;
+        margin-top:5px;
+        position:absolute;
+        top:320px;
+        left:120px;
+    }
+
+
+}
+
+
+@media screen and (max-width: 600px) {
+    .foot_outer {
+        flex-direction: column;
+    }
+
+    .run_menu_hamb {
+        display:inline-block;
+    }
+
+    .foot_cont {
+        top:50px;
+        transform:scale(100% / 410);
+
+    }
+    .run_history {
+        position:absolute;
+        width:100%;
+        height:50px;
+    }
+    .run_list {
+        background-color:black;
+        margin-left:5px;
+        top:0px;
+        width:100%;
+        height:0px;
+        display:none;
+        z-index:10000;
+    }
+    .run_list.open {
+        height:calc(100% - 50px);
+        overflow:visible;
+        display:block;
+    }
+
+}
+@media screen and (max-width: 425px) {
+    .spacer {
+        height:315px;
+
+    }
+    .runsteps, .runsteps2, .runsteps3 {
+        bottom:26px;
+
+    }
+    .runcadtitle {
+        bottom:42px;
+
+    }
+    .runspmtitle {
+        bottom:42px;
+
+    }
+    .run_list {
+        background-color:black;
+    }
+    .run_list.open {
+        height:calc(100% - 50px);
+        display:block;
+    }
+    .runstepstitle {
+        bottom:42px;
+
+    }
+    .go {
+        margin-top:10px;
+    }
+    .foot_cont {
+        top:50px;
+        width:414px;
+        overflow:hidden;
+    // transform-origin:0% 0%;
+    // transform:scale(.914);
+
+    }
+    .heel {
+        position:absolute;
+        left:170px;
+        top:380px;
+        margin-top:5px;
+        transform-origin:50% 0%;
+        transform:scale(1.0);
+
+    }
+    .foot {
+        transform-origin:50% 0%;
+        transform:scale(.66);
+        overflow:visible;
+        iheight:200px;
+        margin-top:5px;
+        position:absolute;
+        top:222px;
+        left:10px;
+    }
+
+    .groundb {
+        transform-origin:0% 0%;
+    //transform:scale(.914);
+        height:200px;
+        width:414px;
+        max-height:200px;
+        background-position:0px -100px;
+        border-radius:0px;
+    }
+
+    .ground {
+        top:62px;
+        width:414px;
+    }
+
+}
+
+
+@media screen and (max-width: 375px) {
+    .spacer {
+        height:235px;
+
+    }
+    .runsteps, .runsteps2, .runsteps3 {
+        bottom:26px;
+
+    }
+    .runcadtitle {
+        bottom:42px;
+
+    }
+    .runspmtitle {
+        bottom:42px;
+
+    }
+    .run_list {
+        background-color:black;
+    }
+    .run_list.open {
+        height:calc(100% - 50px);
+        display:block;
+    }
+    .runstepstitle {
+        bottom:42px;
+
+    }
+    .go {
+        margin-top:10px;
+    }
+    .foot_cont {
+        top:50px;
+        width:375px;
+        overflow:hidden;
+    // transform-origin:0% 0%;
+    // transform:scale(.914);
+
+    }
+    .heel {
+        position:absolute;
+        left:140px;
+        top:340px;
+        margin-top:5px;
+        transform-origin:50% 0%;
+        transform:scale(.85);
+
+    }
+    .foot {
+        transform-origin:50% 0%;
+        transform:scale(.5);
+        overflow:visible;
+        iheight:200px;
+        margin-top:5px;
+        position:absolute;
+        top:222px;
+        left:0px;
+    }
+
+    .groundb {
+        transform-origin:0% 0%;
+    //transform:scale(.914);
+        height:200px;
+        width:375px;
+        max-height:200px;
+        background-position:0px -100px;
+        border-radius:0px;
+    }
+
+    .ground {
+        top:62px;
+    }
+
+}
+
+@media screen and (max-width: 320px) {
+    .spacer {
+        height:195px;
+
+    }
+    .runsteps, .runsteps2, .runsteps3 {
+        bottom:5px;
+
+    }
+    .runcadtitle {
+        bottom:20px;
+
+    }
+    .runspmtitle {
+        bottom:20px;
+
+    }
+    .run_list {
+        background-color:black;
+    }
+    .run_list.open {
+        height:calc(100% - 50px);
+        display:block;
+    }
+    .runstepstitle {
+        bottom:20px;
+
+    }
+    .go {
+        margin-top:10px;
+    }
+    .foot_cont {
+        top:50px;
+        width:320px;
+        overflow:hidden;
+    // transform-origin:0% 0%;
+    // transform:scale(.914);
+
+    }
+    .heel {
+        position:absolute;
+        left:110px;
+        top:270px;
+        margin-top:5px;
+        transform-origin:50% 0%;
+        transform:scale(.85);
+
+    }
+    .foot {
+        transform-origin:50% 0%;
+        transform:scale(.45);
+        overflow:visible;
+        iheight:200px;
+        margin-top:5px;
+        position:absolute;
+        top:180px;
+        left:-20px;
+    }
+
+    .groundb {
+        transform-origin:0% 0%;
+    //transform:scale(.914);
+        height:175px;
+        width:320px;
+        max-height:200px;
+        background-position:0px -100px;
+        border-radius:0px;
+    }
+
+    .ground {
+        top:62px;
+        width:320px;
+    }
+
+}
+
+
+
+.run_item_top {
+    box-sizing:border-box;
+    width:calc(100% - 10px);
+    iheight:30px;
+    position:relative;
+    display:flex;
+    overflow:hidden;
+
+    align-content:flex-start;
+    justify-content:flex-start;
+    align-items:flex-start;
+    flex-direction:column;
+    flex-wrap:nowrap;
+    text-align:left;
+
+//background-image:-webkit-linear-gradient(top, rgba(0,0,0,1.0) 0%, rgba(49,160,240,.3) 100%);
+//border:1px solid rgba(49,160,240,.6);
+
+}
+
+.run_item {
+    box-sizing:border-box;
+    width:calc(100% - 10px);
+    height:60px;
+    position:relative;
+    ipadding-left:300px;
+    display:flex;
+    overflow:hidden;
+    border-radius:6px;
+
+    align-content:flex-start;
+    justify-content:flex-start;
+    align-items:flex-start;
+    flex-direction:row;
+    flex-wrap:wrap;
+    text-align:left;
+
+    margin-bottom:5px;
+    padding-top:5px;
+    padding-bottom:10px;
+    padding-left:10px;
+    cursor:pointer;
+    background-color:rgba(24,80,120,1.0);
+//background-image:-webkit-linear-gradient(top, rgba(0,0,0,1.0) 0%, rgba(49,160,240,.3) 100%);
+//border:1px solid rgba(49,160,240,.6);
+
+}
+.run_item_stats {
+    box-sizing:border-box;
+    width:calc(100% - 10px);
+    height:30px;
+    position:relative;
+    ipadding-left:300px;
+    display:flex;
+    overflow:hidden;
+    border-radius:6px;
+
+    align-content:flex-start;
+    justify-content:space-between;
+    align-items:flex-start;
+    flex-direction:row;
+    flex-wrap:nowrap;
+    text-align:left;
+
+    white-space:nowrap;
+    margin-top:5px;
+    margin-bottom:5px;
+    padding-top:2px;
+    padding-bottom:2px;
+    padding-left:10px;
+    cursor:pointer;
+    ibackground-color:rgba(44,100,140,1.0);
+
+}
+
+
+.run_item_stat {
+    display:inline-block;
+    font-size:10px;
+    line-height:11px;
+    color:white;
+    text-align:center;
+    align-self:flex-start;
+    flex-basis:auto;
+
+}
+
+.run_item.selected {
+    background-color:rgba(49,160,240,1.0);
+    height:140px;
+}
+
+.run_item.selected > .run_item_stats {
+    margin-top:8px;
+    height:110px;
+}
+
+.expand {
+    display:none;
+}
+.expand.expanded {
+    display:block;
+}
+
+
+.run_item_stat.expanded > .expand {
+    display:block;
+}
+
+.run_item_title {
+    display:inline-block;
+    color:rgba(255,255,255,1.0);
+    font-weight:bold;
+
+}
+
+.run_item_date {
+    display:inline-block;
+    position:absolute;
+    font-weight:bold;
+    right:0px;
+    top:-2px;
+    padding-top:2px;
+    color:rgba(255,255,255,.5);
+    text-decoration:none;
+    -webkit-appearance:none;
+
+}
+
+.run_item_date > a {
+    padding-top:2px;
+    font-weight:bold;
+    color:rgba(255,255,255,.5);
+    text-decoration:none;
+    -webkit-appearance:none;
+
+}
+
+.runtitle {
+    padding-left:15px;
+    margin-top:15px;
+    text-align:left;
+    font-size:18px;
+    color:rgba(255,255,255,1.0);
+    font-weight:bold;
+    text-shadow:0 0 4px #000000;
+
+}
+
+
+.rundate {
+    padding-left:15px;
+    margin-top:3px;
+    text-align:left;
+    font-size:14px;
+    color:rgba(255,255,255,1.0);
+    font-weight:bold;
+    text-shadow:0 0 4px #000000;
+
+}
+
+.runtime {
+    position:absolute;
+    top:12px;
+    right:15px;
+    padding-left:15px;
+    margin-top:3px;
+    text-align:left;
+    font-size:20px;
+    color:rgba(255,255,255,1.0);
+    font-weight:bold;
+    text-shadow:0 0 4px #000000;
+
+}
+
+
+
+
+.runsteps.down {
+    color:rgba(0,255,0,1.0);
+}
+
+
+.runspm {
+    position:absolute;
+    bottom:30px;
+    left:0px;
+    padding-left:15px;
+    margin-top:3px;
+    text-align:left;
+    font-size:16px;
+    color:rgba(255,255,255,1.0);
+    font-weight:bold;
+    text-shadow:0 0 4px #000000;
+
+}
+
+.runspm.down {
+    color:rgba(0,255,0,1.0);
+}
+
+
+
+
+.runscade{
+    position:absolute;
+    bottom:30px;
+    left:40px;
+    padding-left:15px;
+    margin-top:3px;
+    text-align:left;
+    font-size:16px;
+    color:rgba(255,255,255,1.0);
+    font-weight:bold;
+    text-shadow:0 0 4px #000000;
+
+}
+
+
+
+.shoe {
+    width:528px;
+    height:394px;
+    position:absolute;
+    overflow:visible;
+    left:-140px;
+    top:-218px;
+// background-color:yellow;
+    background-image:url(/assets/shoe2.all.png);
+    background-size:528px 1576px;
+    background-repeat:no-repeat;
+    transform-origin:50%, 20%;
+    transform:scale(.25);
+}
+
+.sole_blur {
+    position:relative;
+    top:-20px;
+    left:-22px;
+    opacity:.3;
+    transform-origin:50% 50%;
+    transform:translate(1px, 0px) scale(1.03, 1.01);
+
+}
+
+.sole {
+    width:200px;
+    height:460px;
+    position:absolute;
+    overflow:hidden;
+    left:0px;
+    top:0px;
+// border:1px solid red;
+// background-color:yellow;
+//margin-bottom:30px;
+}
+
+.sole_dialg {
+    width:200px;
+    height:200px;
+    position:absolute;
+    top:0px;
+    left:0px;
+    transform-origin:50%, 50%;
+    z-index:2000;
+    opacity:.3;
+
+}
+.sole_dial {
+    width:200px;
+    height:200px;
+    position:absolute;
+    top:0px;
+    left:0px;
+    transform-origin:50%, 50%;
+    z-index:2001;
+
+}
+
+.sole_front_cont {
+    box-sizing:border-box;
+    width:200px;
+    height:200px;
+    iborder-radius:100px;
+    background-image:url(/assets/svg_meter.svg);
+    background-size:240px, 240px;
+    background-position:-20px -8px;
+    background-repeat:no-repeat;
+//border:1px solid red;
+    position:absolute;
+    overflow:visible;
+    left:0px;
+    ibottom:0px;
+    transform-origin:50%, 100%;
+//  background-color:orange;
+
+}
+
+.sole_front {
+    width:200px;
+    height:30px;
+    top:80px;
+    position:absolute;
+    overflow:visible;
+    left:0px;
+    ibottom:0px;
+    transform-origin:50%, 100%;
+//  background-color:orange;
+
+}
+
+.sole_side {
+    width:40px;
+    height:460px;
+    position:absolute;
+    overflow:visible;
+    left:0px;
+    top:50px;
+//  background-color:blue;
+
+}
+
+.sole_slider_top {
+    position:relative;
+    margin-top:20px;
+    box-sizing:border-box;
+    border-radius:6px;
+    height:30px;
+    margin-left:20px;
+    margin-right:20px;
+    width:calc(100% - 40px);
+    background-color:rgba(20,20,20,1.0);
+    background-image:-webkit-linear-gradient(left, rgba(0,0,0,1.0) 0%, rgba(49,160,240,.3) 50%, rgba(0,0,0,1.0) 100%);
+    border:1px solid rgba(49,160,240,.6);
+    border-bottom:0;
+    border-bottom-left-radius:0px;
+    border-bottom-right-radius:0px;
+    -webkit-appearance:none;
+    transition:all .3s ease-in;
+
+}
+
+
+.sole_slider_top::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 24px;
+    width: 24px;
+    border-radius: 5px;
+    background-image:url(/assets/svg_profilemyrunv_b.svg);
+    background-size:24px 24px;
+    background-position:0px -2px;
+    background-repeat:no-repeat;
+    border-radius:12px;
+    background-color:rgba(0,0,0,1.0);
+
+    cursor: pointer;
+    margin-top: 1px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+//box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; /* Add cool effects to your sliders! */
+}
+
+
+
+.sole_slider_top[data-status="playing"] {
+    height:0px;
+    overflow:hidden;
+    disabled:true;
+    opacity:0;
+    transition:all .3s ease-in;
+}
+
+.sole_slider_bottom {
+    position:relative;
+    margin-top:20px;
+    box-sizing:border-box;
+    border-radius:6px;
+    height:30px;
+    margin-left:20px;
+    margin-right:20px;
+    margin-top:0;
+    width:calc(100% - 40px);
+    background-color:rgba(20,20,20,1.0);
+    background-image:-webkit-linear-gradient(left, rgba(0,0,0,1.0) 0%, rgba(49,160,240,.3) 50%, rgba(0,0,0,1.0) 100%);
+    border:1px solid rgba(49,160,240,.6);
+    border-top-left-radius:0px;
+    border-top-right-radius:0px;
+    border-top-style:dashed;
+    -webkit-appearance:none;
+
+}
+
+.sole_slider_bottom::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 24px;
+    width: 24px;
+    border-radius: 5px;
+    background-image:url(/assets/svg_profilemyrunv_b.svg);
+    background-size:24px 24px;
+    background-position:0px -2px;
+    background-repeat:no-repeat;
+    border-radius:12px;
+    background-color:rgba(0,0,0,1.0);
+
+    cursor: pointer;
+    margin-top: 1px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+//box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; /* Add cool effects to your sliders! */
+}
+
+.sole_slider_bottom::before {
+    content:"0:00:00";
+    width:60px;
+    height:24px;
+    position:absolute;
+
+    top:30px;
+    left:10px;
+    color:rgba(255,255,255,.3);
+    z-index:10000;
+
+
+}
+
+.sole_slider_bottom::after {
+    content:"0:00:00";
+    width:60px;
+    height:24px;
+    position:absolute;
+
+    top:30px;
+    left:calc(100% - 60px);
+    icolor:rgba(255,255,255,.3);
+
+
+}
+.sole_slider_bottom[data-status="paused"] {
+    border-top-style:dashed;
+    border-top-left-radius:0px;
+    border-top-right-radius:0px;
+    color:rgba(255,255,255,.3);
+
+
+}
+.sole_slider_bottom[data-status="playing"] {
+    border-top-style:solid;
+    border-top-left-radius:6px;
+    border-top-right-radius:6px;
+    color:rgba(255,255,255,.6);
+
+
+}
+
+div[data-status="playing"] > .sole_slider.frame {
+    display:none;
+}
+div[data-status="paused"] > .sole_slider.frame {
+    display:none;
+}
+
+
+
+
+body {
+    background-color:rgba(80,80,80,1.0);
+    margin:0;padding:0;
+//background-image:url(images/apps_back.jpg);
+    background-repeat:no-repeat;
+
+
+}
+
+
+
+.app_title {
+    color:white;
+    font-size:20px;
+    font-weight:bold;
+    white-space:nowrap;
+
+}
+
+.app_desc {
+    width:200px;
+    color:rgba(255,255,255,.6);
+    font-size:14px;
+
+}
+
+.contents {
+    -webkit-perspective: 150px;
+    position:relative;
+    perspective: 1000px;
+    tranform-style:preserve-3d;
+    perspective-origin: 0% 50%;
+
+}

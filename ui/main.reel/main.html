@@ -4,6 +4,12 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <title>Main</title>
 
+    <meta name="viewport" content=" initial-scale=1, maximum-scale=1, width=device-width, height=device-height, user-scalable=0"/>
+
+    <!--script type='text/javascript' src='heel.js'></script-->
+    <!--script type='text/javascript' src='fore.js'></script-->
+    <!--script type='text/javascript' src='allProfile.js'></script-->
+
     <link rel="stylesheet" type="text/css" href="main.css">
 
     <script type="text/montage-serialization">
@@ -12,13 +18,201 @@
                 "properties": {
                     "element": {"#": "main"}
                 }
+            },
+
+            "runHistory": {
+                "prototype": "ui/run-history-view.reel",
+                "properties": {
+                    "element": {"#": "runHistory"}
+                }
             }
         }
     </script>
 </head>
-<body>
+<body onload="loaded()">
     <div data-montage-id="main" data-montage-skin="light" class="Main">
-        <div data-montage-id="montageVersion"></div>
+        <div class=foot_outer>
+            <div id=run_history class=run_history data-montage-id="runHistory"></div>
+            <div data-status='paused' class=foot_cont>
+                <div id=groundb class=groundb>
+                    <div id=ground class=ground>
+
+                        <div id=shoe class=shoe></div>
+                    </div>
+                    <div id=run_title class=runtitle></div>
+                    <div id=run_date  class=rundate></div>
+                    <div id=v_time_in class=runtime>
+
+                    </div>
+                    <div class=runstepstitle>
+                        STEPS
+                    </div>
+                    <div id=v_steps_in class=runsteps>
+                    </div>
+
+                    <div class=runspmtitle>
+                        CADENCE
+                    </div>
+                    <div id=v_stepsm_in class=runsteps2>
+                    </div>
+
+                    <div class=runcadtitle>
+                        STRIKE
+                    </div>
+                    <div id=v_stepscad_in class=runsteps3>
+                    </div>
+
+                    <div id=accel class=accel></div>
+
+
+
+                </div>
+                <div class=spacer></div>
+                <div class=foot>
+                    <div id=sole_cont class=sole_cont>
+                        <img class=sole_blur src='/assets/sole2_blur.png'>
+                        <div id=sole class=sole></div>
+                    </div>
+
+
+                    <div id=v_forep class=fore_cont>
+                        <div id=v_forep_title class=data_title>
+                            FORE<br>
+                            PRESSURE
+                        </div>
+                        <div id=v_forep_in class=pressure_display>
+                            32.1
+                        </div>
+                    </div>
+
+                    <div id=v_heelp class=heel_cont>
+                        <div id=v_heelp_title class=data_title>
+                            HEEL<br>
+                            PRESSURE
+                        </div>
+                        <div id=v_heelp_in class=pressure_display>
+                            32.1
+                        </div>
+                    </div>
+                </div>
+                <div class=heel>
+                    <div id=sole_front_cont class=sole_front_cont>
+                        <div id=sole_front class=sole_front></div>
+                        <img id=sole_dialg src='/assets/svg_dial3.svg' class=sole_dialg />
+                        <img id=sole_dial src='/assets/svg_dial2.svg' class=sole_dial />
+                    </div>
+                    <div id=v_sidea class=pron_cont>
+                        <div id=v_sidea_in class=data_display>
+                            PRONATION
+                        </div>
+                    </div>
+
+                </div>
+
+                <input data-status=paused id=sole_fslider class='sole_slider_top frame' type='range' value="0" min='-40' max='40' list='runframes' oninput='APP.seekmini(this.value)'/>
+                <datalist id="runframes">
+                    <option value="-20">
+                    <option value="0">
+                    <option value="20">
+                </datalist>
+                <input data-status=paused id=sole_slider class=sole_slider_bottom type='range' value="500" min='0' max='1000' list='runclicks' oninput='APP.seek(this.value)'/>
+                <datalist id="runclicks">
+                    <option value="0">
+                    <option value="100">
+                    <option value="200">
+                    <option value="300">
+                    <option value="400">
+                    <option value="500">
+                    <option value="600">
+                    <option value="700">
+                    <option value="800">
+                    <option value="900">
+                    <option value="1000">
+                </datalist>
+                <!--div id=duration class=data_duration>
+
+                </div-->
+                <div id=go class=go onClick='APP.start(this)' ></div>
+            </div>
+            <div  class=data_side>
+
+
+
+                <!--div id=v_frona class=data_cont>
+                   <div id=v_frona_title class=data_title>
+                   FRONT<br>
+                   ANGLE
+                   </div>
+                   <div id=v_frona_in class=data_display>
+                   32.1
+                   </div>
+                </div>
+
+
+                <div id=v_sidea class=data_cont>
+                   <div id=v_sidea_title class=data_title>
+                   SIDE<br>
+                   ANGLE
+                   </div>
+                   <div id=v_sidea_in class=data_display>
+                   32.1
+                   </div>
+                </div-->
+
+                <!--div id=v_upa class=data_cont>
+                   <div id=v_upa_title class=data_title>
+                   UP<br>
+                   ANGLE
+                   </div>
+                   <div id=v_upa_in class=data_display>
+                   32.1
+                   </div>
+                </div-->
+
+                <!--div id=v_upa class=data_cont>
+                          <div id=v_time_title class=data_title>
+                          CURRENT<br>
+                          TIME
+                          </div>
+                          <div id=v_time_in class=data_display>
+                          32.1
+                          </div>
+               </div-->
+
+                <!--div id=v_cade class=data_cont>
+                      <div id=v_cade_title class=data_title>
+                      CADENCE<br>
+                      COUNT
+                      </div>
+                      <div id=v_cade_in class=data_display>
+                      32.1
+                      </div>
+               </div-->
+
+                <!--div id=v_steps class=data_cont>
+                               <div id=v_steps_title class=data_title>
+                               STEP<br>
+                               COUNT
+                               </div>
+                               <div id=v_steps_in class=data_display>
+                               32.1
+                               </div>
+                </div-->
+
+                <!--div id=v_stepsm class=data_cont>
+                               <div id=v_stepsm_title class=data_title>
+                               STEPS/<br>
+                               MINUTE
+                               </div>
+                               <div id=v_stepsm_in class=data_display>
+                               32.1
+                               </div>
+                </div-->
+                <!--input id=tryangle oninput="APP.tryAngle(this)" /-->
+
+            </div>
+
+        </div>
     </div>
 </body>
 </html>
