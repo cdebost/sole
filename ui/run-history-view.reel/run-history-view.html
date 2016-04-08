@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" href="run-history-view.css">
+    <script type="text/montage-serialization">
+    {
+        "owner": {
+            "properties": {
+                "element": {"#": "owner"}
+            }
+        },
+
+        "toggleMenuButton": {
+            "prototype": "montage/ui/button.reel",
+            "properties": {
+                "element": {"#": "toggleMenuButton"},
+                "label": ""
+            },
+            "listeners": [
+                {
+                    "type": "action",
+                    "listener": {"@": "owner"}
+                }
+            ]
+        },
+
+        "showMenuCondition": {
+            "prototype": "montage/ui/condition.reel",
+            "properties": {
+                "element": {"#": "showMenuCondition"}
+            },
+            "bindings": {
+                "condition": {"<-": "@owner._isMenuOpen"}
+            }
+        },
+
+        "title": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "title"},
+                "value": "profileMyRun"
+            }
+        },
+
+        "runList": {
+            "prototype": "montage/ui/repetition.reel",
+            "properties": {
+                "element": {"#": "runList"},
+                "isSelectionEnabled": true
+            },
+            "bindings": {
+                "contentController": {"<-": "@owner.runs"}
+            }
+        },
+
+        "runView": {
+            "prototype": "./run-view.reel",
+            "properties": {
+                "element": {"#": "runView"}
+            },
+            "bindings": {
+                "run": {"<-": "@runList:iteration.object"}
+            }
+        }
+    }
+    </script>
+</head>
+<body>
+    <div data-montage-id="owner" class="RunHistoryView">
+        <div class="menu">
+            <span data-montage-id="toggleMenuButton" class="toggleMenuButton">
+                <img src="/assets/svg_hamburger2_s.svg"/>
+            </span>
+
+            <img src="/assets/svg_profilemyrun_b.svg" class="logo" />
+            <div data-montage-id="title" class="title"></div>
+        </div>
+        <div data-montage-id="showMenuCondition" class="showMenuCondition">
+            <div data-montage-id="runList" class="runlist">
+                <div data-montage-id="runView" class="runView"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

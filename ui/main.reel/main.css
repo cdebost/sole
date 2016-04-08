@@ -433,10 +433,6 @@
         flex-direction: column;
     }
 
-    .run_menu_hamb {
-        display:inline-block;
-    }
-
     .foot_cont {
         top:50px;
         transform:scale(100% / 410);
@@ -447,21 +443,6 @@
         width:100%;
         height:50px;
     }
-    .run_list {
-        background-color:black;
-        margin-left:5px;
-        top:0px;
-        width:100%;
-        height:0px;
-        display:none;
-        z-index:10000;
-    }
-    .run_list.open {
-        height:calc(100% - 50px);
-        overflow:visible;
-        display:block;
-    }
-
 }
 @media screen and (max-width: 425px) {
     .spacer {
@@ -480,13 +461,7 @@
         bottom:42px;
 
     }
-    .run_list {
-        background-color:black;
-    }
-    .run_list.open {
-        height:calc(100% - 50px);
-        display:block;
-    }
+
     .runstepstitle {
         bottom:42px;
 
@@ -557,13 +532,7 @@
         bottom:42px;
 
     }
-    .run_list {
-        background-color:black;
-    }
-    .run_list.open {
-        height:calc(100% - 50px);
-        display:block;
-    }
+
     .runstepstitle {
         bottom:42px;
 
@@ -632,13 +601,7 @@
         bottom:20px;
 
     }
-    .run_list {
-        background-color:black;
-    }
-    .run_list.open {
-        height:calc(100% - 50px);
-        display:block;
-    }
+
     .runstepstitle {
         bottom:20px;
 
@@ -688,146 +651,6 @@
         top:62px;
         width:320px;
     }
-
-}
-
-
-
-.run_item_top {
-    box-sizing:border-box;
-    width:calc(100% - 10px);
-    iheight:30px;
-    position:relative;
-    display:flex;
-    overflow:hidden;
-
-    align-content:flex-start;
-    justify-content:flex-start;
-    align-items:flex-start;
-    flex-direction:column;
-    flex-wrap:nowrap;
-    text-align:left;
-
-//background-image:-webkit-linear-gradient(top, rgba(0,0,0,1.0) 0%, rgba(49,160,240,.3) 100%);
-//border:1px solid rgba(49,160,240,.6);
-
-}
-
-.run_item {
-    box-sizing:border-box;
-    width:calc(100% - 10px);
-    height:60px;
-    position:relative;
-    ipadding-left:300px;
-    display:flex;
-    overflow:hidden;
-    border-radius:6px;
-
-    align-content:flex-start;
-    justify-content:flex-start;
-    align-items:flex-start;
-    flex-direction:row;
-    flex-wrap:wrap;
-    text-align:left;
-
-    margin-bottom:5px;
-    padding-top:5px;
-    padding-bottom:10px;
-    padding-left:10px;
-    cursor:pointer;
-    background-color:rgba(24,80,120,1.0);
-//background-image:-webkit-linear-gradient(top, rgba(0,0,0,1.0) 0%, rgba(49,160,240,.3) 100%);
-//border:1px solid rgba(49,160,240,.6);
-
-}
-.run_item_stats {
-    box-sizing:border-box;
-    width:calc(100% - 10px);
-    height:30px;
-    position:relative;
-    ipadding-left:300px;
-    display:flex;
-    overflow:hidden;
-    border-radius:6px;
-
-    align-content:flex-start;
-    justify-content:space-between;
-    align-items:flex-start;
-    flex-direction:row;
-    flex-wrap:nowrap;
-    text-align:left;
-
-    white-space:nowrap;
-    margin-top:5px;
-    margin-bottom:5px;
-    padding-top:2px;
-    padding-bottom:2px;
-    padding-left:10px;
-    cursor:pointer;
-    ibackground-color:rgba(44,100,140,1.0);
-
-}
-
-
-.run_item_stat {
-    display:inline-block;
-    font-size:10px;
-    line-height:11px;
-    color:white;
-    text-align:center;
-    align-self:flex-start;
-    flex-basis:auto;
-
-}
-
-.run_item.selected {
-    background-color:rgba(49,160,240,1.0);
-    height:140px;
-}
-
-.run_item.selected > .run_item_stats {
-    margin-top:8px;
-    height:110px;
-}
-
-.expand {
-    display:none;
-}
-.expand.expanded {
-    display:block;
-}
-
-
-.run_item_stat.expanded > .expand {
-    display:block;
-}
-
-.run_item_title {
-    display:inline-block;
-    color:rgba(255,255,255,1.0);
-    font-weight:bold;
-
-}
-
-.run_item_date {
-    display:inline-block;
-    position:absolute;
-    font-weight:bold;
-    right:0px;
-    top:-2px;
-    padding-top:2px;
-    color:rgba(255,255,255,.5);
-    text-decoration:none;
-    -webkit-appearance:none;
-
-}
-
-.run_item_date > a {
-    padding-top:2px;
-    font-weight:bold;
-    color:rgba(255,255,255,.5);
-    text-decoration:none;
-    -webkit-appearance:none;
 
 }
 

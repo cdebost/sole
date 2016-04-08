@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" href="run-stats.css">
+    <script type="text/montage-serialization">
+    {
+        "owner": {
+            "properties": {
+                "element": {"#": "owner"}
+            }
+        },
+
+        "statsDur": {
+            "prototype": "montage/ui/repetition.reel",
+            "properties": {
+                "element": {"#": "statsDur"}
+            },
+            "bindings": {
+                "content": {"<-": "@owner.stats.dur"}
+            }
+        },
+
+        "statsDurValue": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "statsDurValue"}
+            },
+            "bindings": {
+                "value": {"<-": "@statsDur:iteration.object"}
+            }
+        },
+
+        "statsDurAverage": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "statsDurAverage"}
+            },
+            "bindings": {
+                "value": {"<-": "@owner.stats.dur.avg"}
+            }
+        },
+
+        "statsSte": {
+            "prototype": "montage/ui/repetition.reel",
+            "properties": {
+                "element": {"#": "statsSte"}
+            },
+            "bindings": {
+                "content": {"<-": "@owner.stats.ste"}
+            }
+        },
+
+        "statsSteValue": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "statsSteValue"}
+            },
+            "bindings": {
+                "value": {"<-": "@statsSte:iteration.object"}
+            }
+        },
+
+        "statsSteAverage": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "statsSteAverage"}
+            },
+            "bindings": {
+                "value": {"<-": "@owner.stats.ste.avg"}
+            }
+        },
+
+        "statsSpm": {
+            "prototype": "montage/ui/repetition.reel",
+            "properties": {
+                "element": {"#": "statsSpm"}
+            },
+            "bindings": {
+                "content": {"<-": "@owner.stats.spm"}
+            }
+        },
+
+        "statsSpmValue": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "statsSpmValue"}
+            },
+            "bindings": {
+                "value": {"<-": "@statsSpm:iteration.object"}
+            }
+        },
+
+        "statsSpmAverage": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "statsSpmAverage"}
+            },
+            "bindings": {
+                "value": {"<-": "@owner.stats.spm.avg"}
+            }
+        },
+
+        "statsStr": {
+            "prototype": "montage/ui/repetition.reel",
+            "properties": {
+                "element": {"#": "statsStr"}
+            },
+            "bindings": {
+                "content": {"<-": "@owner.stats.str"}
+            }
+        },
+
+        "statsStrValue": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "statsStrValue"}
+            },
+            "bindings": {
+                "value": {"<-": "@statsStr:iteration.object"}
+            }
+        },
+
+        "statsStrAverage": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "statsStrAverage"}
+            },
+            "bindings": {
+                "value": {"<-": "@owner.stats.str.avg"}
+            }
+        },
+
+        "statsPro": {
+            "prototype": "montage/ui/repetition.reel",
+            "properties": {
+                "element": {"#": "statsPro"}
+            },
+            "bindings": {
+                "content": {"<-": "@owner.stats.pro"}
+            }
+        },
+
+        "statsProValue": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "statsProValue"}
+            },
+            "bindings": {
+                "value": {"<-": "@statsPro:iteration.object"}
+            }
+        },
+
+        "statsProAverage": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "statsProAverage"}
+            },
+            "bindings": {
+                "value": {"<-": "@owner.stats.pro.avg"}
+            }
+        }
+    }
+    </script>
+</head>
+<body>
+    <div data-montage-id="owner" class="RunStats">
+        <div class="stat">
+            <div>TIME</div>
+            <span class="expand">------<br></span>
+            <div data-montage-id="statsDur">
+                <span data-montage-id="statsDurValue"></span><br>
+            </div>
+            <span>------</span>
+            <div data-montage-id="statsDurAverage"></div>
+        </div>
+        <div class="stat">
+            <div>STEPS</div>
+            <span class="expand">------<br></span>
+            <div data-montage-id="statsSte">
+                <span data-montage-id="statsSteValue"></span><br>
+            </div>
+            <span>------</span>
+            <div data-montage-id="statsSteAverage"></div>
+        </div>
+        <div class="stat">
+            <div>CADE</div>
+            <span class="expand">------<br></span>
+            <div data-montage-id="statsSpm">
+                <span data-montage-id="statsSpmValue"></span><br>
+            </div>
+            <span>------</span>
+            <div data-montage-id="statsSpmAverage"></div>
+        </div>
+        <div class="stat">
+            <div>STRIKE</div>
+            <span class="expand">------<br></span>
+            <div data-montage-id="statsStr">
+                <span data-montage-id="statsStrValue"></span><br>
+            </div>
+            <span>------</span>
+            <div data-montage-id="statsStrAverage"></div>
+        </div>
+        <div class="stat">
+            <div>PRON</div>
+            <span class="expand">------<br></span>
+            <div data-montage-id="statsPro">
+                <span data-montage-id="statsProValue"></span><br>
+            </div>
+            <span>------</span>
+            <div data-montage-id="statsProAverage"></div>
+        </div>
+    </div>
+</body>
+</html>

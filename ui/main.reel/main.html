@@ -16,7 +16,18 @@
         {
             "owner": {
                 "properties": {
-                    "element": {"#": "main"}
+                    "element": {"#": "main"},
+                    "runs": {"@": "runs"}
+                },
+                "bindings": {
+                    "selectedRun": {"<-": "@runs.selection.0"}
+                }
+            },
+
+            "runs": {
+                "prototype": "montage/core/range-controller",
+                "properties": {
+                    "avoidsEmptySelection": true
                 }
             },
 
@@ -24,12 +35,15 @@
                 "prototype": "ui/run-history-view.reel",
                 "properties": {
                     "element": {"#": "runHistory"}
+                },
+                "bindings": {
+                    "runs": {"<-": "@owner.runs"}
                 }
             }
         }
     </script>
 </head>
-<body onload="loaded()">
+<body onload="">
     <div data-montage-id="main" data-montage-skin="light" class="Main">
         <div class=foot_outer>
             <div id=run_history class=run_history data-montage-id="runHistory"></div>

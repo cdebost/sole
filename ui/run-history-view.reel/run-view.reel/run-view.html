@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" href="run-view.css">
+    <script type="text/montage-serialization">
+    {
+        "owner": {
+            "properties": {
+                "element": {"#": "owner"}
+            }
+        },
+
+        "title": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "title"}
+            },
+            "bindings": {
+                "value": {"<-": "@owner.run.title"}
+            }
+        },
+
+        "date": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "date"}
+            },
+            "bindings": {
+                "value": {"<-": "@owner.run.date.format('niceDate2') ?? 'LOAD RUN'"}
+            }
+        },
+
+        "statsView": {
+            "prototype": "./run-stats.reel",
+            "properties": {
+                "element": {"#": "statsView"}
+            },
+            "bindings": {
+                "stats": {"<-": "@owner.run.stats"},
+                "runId": {"<-": "@owner.run.id"}
+            }
+        }
+    }
+    </script>
+</head>
+<body>
+    <div data-montage-id="owner" class="RunView">
+        <div class="top">
+            <div data-montage-id="title" class="title"></div>
+            <div data-montage-id="date" class="date"></div>
+        </div>
+        <div data-montage-id="statsView" class="stats"></div>
+    </div>
+</body>
+</html>
