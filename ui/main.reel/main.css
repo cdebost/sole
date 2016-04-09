@@ -63,17 +63,7 @@
     background-color:rgba(255,255,255,.1);
 
 }
-.accel {
-    position:absolute;
-    height:5px;
-    width:64px;
-    right:0px;
-    bottom:0px;
-    background-color:red;
-    transform-origin:100% 100%;
-    transform:translateY(0px);
 
-}
 .fore_cont {
     position:absolute;
     left:50px;
@@ -235,18 +225,7 @@
 
 }
 
-.ground {
-    position:absolute;
-    top:158px;
-    left:0px;
-    width:400px;
-    height:142px;
-    background-image:url(/assets/ground3.png);
-    background-size:400px 142px;
-    background-repeat:repeat-x;
 
-
-}
 .spacer {
     height:0px;
 
@@ -324,90 +303,12 @@
 
 }
 
-.runstepstitle {
-    position:absolute;
-    bottom:46px;
-    left:0px;
-    padding-left:15px;
-    margin-top:3px;
-    text-align:left;
-    font-size:12px;
-    color:rgba(255,255,255,1.0);
-    font-weight:bold;
-    text-shadow:0 0 4px #000000;
-
-}
-
-.runsteps {
-    position:absolute;
-    bottom:30px;
-    left:0px;
-    padding-left:15px;
-    margin-top:3px;
-    text-align:left;
-    font-size:16px;
-    color:rgba(255,255,255,1.0);
-    font-weight:bold;
-    text-shadow:0 0 4px #000000;
-
-}
-
-.runsteps2 {
-    position:absolute;
-    bottom:30px;
-    left:50px;
-    padding-left:15px;
-    margin-top:3px;
-    text-align:left;
-    font-size:16px;
-    color:rgba(255,255,255,1.0);
-    font-weight:bold;
-    text-shadow:0 0 4px #000000;
-
-}
-
-.runsteps3 {
-    position:absolute;
-    bottom:30px;
-    left:120px;
-    padding-left:15px;
-    margin-top:3px;
-    text-align:left;
-    font-size:16px;
-    color:rgba(255,255,255,1.0);
-    font-weight:bold;
-    text-shadow:0 0 4px #000000;
-
-}
 
 
-.runspmtitle {
-    position:absolute;
-    bottom:46px;
-    left:50px;
-    padding-left:15px;
-    margin-top:3px;
-    text-align:left;
-    font-size:12px;
-    color:rgba(255,255,255,1.0);
-    font-weight:bold;
-    text-shadow:0 0 4px #000000;
 
-}
 
-.runcadtitle {
-    position:absolute;
-    bottom:46px;
-    left:117px;
-    padding-left:15px;
-    margin-top:3px;
-    text-align:left;
-    font-size:12px;
-    color:rgba(255,255,255,1.0);
-    font-weight:bold;
-    text-shadow:0 0 4px #000000;
 
-}
+
 @media screen and (max-width: 800px) {
     .spacer {
         height:375px;
@@ -449,23 +350,7 @@
         height:315px;
 
     }
-    .runsteps, .runsteps2, .runsteps3 {
-        bottom:26px;
 
-    }
-    .runcadtitle {
-        bottom:42px;
-
-    }
-    .runspmtitle {
-        bottom:42px;
-
-    }
-
-    .runstepstitle {
-        bottom:42px;
-
-    }
     .go {
         margin-top:10px;
     }
@@ -506,12 +391,6 @@
         background-position:0px -100px;
         border-radius:0px;
     }
-
-    .ground {
-        top:62px;
-        width:414px;
-    }
-
 }
 
 
@@ -520,23 +399,7 @@
         height:235px;
 
     }
-    .runsteps, .runsteps2, .runsteps3 {
-        bottom:26px;
 
-    }
-    .runcadtitle {
-        bottom:42px;
-
-    }
-    .runspmtitle {
-        bottom:42px;
-
-    }
-
-    .runstepstitle {
-        bottom:42px;
-
-    }
     .go {
         margin-top:10px;
     }
@@ -577,11 +440,6 @@
         background-position:0px -100px;
         border-radius:0px;
     }
-
-    .ground {
-        top:62px;
-    }
-
 }
 
 @media screen and (max-width: 320px) {
@@ -589,23 +447,7 @@
         height:195px;
 
     }
-    .runsteps, .runsteps2, .runsteps3 {
-        bottom:5px;
 
-    }
-    .runcadtitle {
-        bottom:20px;
-
-    }
-    .runspmtitle {
-        bottom:20px;
-
-    }
-
-    .runstepstitle {
-        bottom:20px;
-
-    }
     .go {
         margin-top:10px;
     }
@@ -646,57 +488,14 @@
         background-position:0px -100px;
         border-radius:0px;
     }
-
-    .ground {
-        top:62px;
-        width:320px;
-    }
-
-}
-
-.runtitle {
-    padding-left:15px;
-    margin-top:15px;
-    text-align:left;
-    font-size:18px;
-    color:rgba(255,255,255,1.0);
-    font-weight:bold;
-    text-shadow:0 0 4px #000000;
-
-}
-
-
-.rundate {
-    padding-left:15px;
-    margin-top:3px;
-    text-align:left;
-    font-size:14px;
-    color:rgba(255,255,255,1.0);
-    font-weight:bold;
-    text-shadow:0 0 4px #000000;
-
-}
-
-.runtime {
-    position:absolute;
-    top:12px;
-    right:15px;
-    padding-left:15px;
-    margin-top:3px;
-    text-align:left;
-    font-size:20px;
-    color:rgba(255,255,255,1.0);
-    font-weight:bold;
-    text-shadow:0 0 4px #000000;
-
 }
 
 
 
 
-.runsteps.down {
-    color:rgba(0,255,0,1.0);
-}
+
+
+
 
 
 .runspm {
@@ -736,20 +535,7 @@
 
 
 
-.shoe {
-    width:528px;
-    height:394px;
-    position:absolute;
-    overflow:visible;
-    left:-140px;
-    top:-218px;
-// background-color:yellow;
-    background-image:url(/assets/shoe2.all.png);
-    background-size:528px 1576px;
-    background-repeat:no-repeat;
-    transform-origin:50%, 20%;
-    transform:scale(.25);
-}
+
 
 .sole_blur {
     position:relative;

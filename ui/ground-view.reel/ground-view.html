@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" href="ground-view.css">
+    <script type="text/montage-serialization">
+    {
+        "owner": {
+            "properties": {
+                "element": {"#": "owner"},
+                "ground": {"#": "ground"},
+                "shoe": {"#": "shoe"},
+                "acceleration": {"#": "acceleration"}
+            }
+        },
+
+        "title": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "title"}
+            },
+            "bindings": {
+                "value": {"<-": "@owner.run.title"}
+            }
+        },
+
+        "date": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "date"}
+            },
+            "bindings": {
+                "value": {"<-": "@owner.run.date.format('fullDate')"}
+            }
+        },
+
+        "time": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "time"}
+            },
+            "bindings": {
+                "value": {"<-": "@owner.controller.stats.time"}
+            }
+        },
+
+        "steps": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "steps"}
+            },
+            "bindings": {
+                "value": {"<-": "@owner.controller.stats.steps < 0 ? -@owner.controller.stats.steps : @owner.controller.stats.steps"},
+                "classList.has('down')": {"<-": "@owner.controller.stats.steps > 0"}
+            }
+        },
+
+        "cadence": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "cadence"}
+            },
+            "bindings": {
+                "value": {"<-": "@owner.controller.stats.stepsm"}
+            }
+        },
+
+        "strike": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "strike"}
+            },
+            "bindings": {
+                "value": {"<-": "@owner.controller.stats.front"}
+            }
+        }
+    }
+    </script>
+</head>
+<body>
+    <div data-montage-id="owner" class="GroundView">
+        <div data-montage-id="ground" class=ground>
+            <div data-montage-id="shoe" class=shoe></div>
+        </div>
+        <div data-montage-id="title" class="title"></div>
+        <div data-montage-id="date"  class="date"></div>
+        <div data-montage-id="time" class=runtime></div>
+        <div class=runstepstitle>
+            STEPS
+        </div>
+        <div data-montage-id="steps" class=runsteps>
+        </div>
+
+        <div class=runspmtitle>
+            CADENCE
+        </div>
+        <div data-montage-id="cadence" class=runsteps2>
+        </div>
+
+        <div class=runcadtitle>
+            STRIKE
+        </div>
+        <div data-montage-id="strike" class=runsteps3>
+        </div>
+
+        <div data-montage-id="acceleration" class=accel></div>
+    </div>
+</body>
+</html>

@@ -72,7 +72,7 @@ exports.Main = Component.specialize(/** @lends Main# */ {
 function loaded() {
     APP = new App();
     APP.build();
-    APP.readData(APP.current_run);
+    // APP.readData(APP.current_run);
 }
 
 function App() {
@@ -92,7 +92,7 @@ function App() {
     this.ani = 0;
 
 
-    this.current_run = this.runs[3];
+    // this.current_run = this.runs[3];
     this.current_center = -1;
 
 
@@ -146,10 +146,10 @@ App.prototype.start = function () {
 
 }
 
-App.prototype.pause = function () {
-
-
-}
+// App.prototype.pause = function () {
+//
+//
+// }
 
 
 App.prototype.getCSS = function (val, key, value) {
@@ -423,64 +423,64 @@ App.prototype.paintPressure = function (fore, heel, angle) {
 
 }
 
-App.prototype.interpolate = function (time, run, list, stats, v) {
+// App.prototype.interpolate = function (time, run, list, stats, v) {
+//
+//     var first = -1;
+//     var second = 0;
+//     for (var a = 0; a < list.length; a++) {
+//         if (list[a][0] <= time) first = a;
+//         else {
+//
+//             if (first >= 0) { //FOUND BEFORE AND AFTER
+//
+//                 var perc = (time - list[first][0])/(list[a][0] - list[first][0]);
+//
+//                 if (v) {
+//                     stats.heel = (list[first][3] + (list[a][3] - list[first][3])*perc);
+//                 } else {
+//                     stats.front = (list[first][4] + (list[a][4] - list[first][4])*perc);
+//                     stats.fore = (list[first][3] + (list[a][3] - list[first][3])*perc);
+//                     stats.side = (list[first][5] + (list[a][5] - list[first][5])*perc);
+//                     stats.up = (list[first][6] + (list[a][6] - list[first][6])*perc);
+//                     stats.time = list[first][2];
+//
+//                     stats.gpos2 = (list[first][13] + (list[a][13] - list[first][13])*perc);
+//                     stats.footx2 = (list[first][14] + (list[a][14] - list[first][14])*perc);
+//                     stats.footp = (list[first][15] + (list[a][15] - list[first][15])*perc);
+//                     stats.front2 = (list[first][16] + (list[a][16] - list[first][16])*perc);
+//                     stats.top2 = (list[first][17] + (list[a][17] - list[first][17])*perc);
+//                     stats.gpos = (list[first][12] + (list[a][12] - list[first][12])*perc);
+//
+//                     stats.top = (run.tops[first] + (run.tops[a] - run.tops[first])*perc);
+//                     stats.steps = run.steps[a];//(run.steps[first] + (run.steps[a] - run.steps[first])*perc);
+//                     stats.stepsm = (run.stepsm[first] + (run.stepsm[a] - run.stepsm[first])*perc);
+//                     stats.footx = (run.footx[first] + (run.footx[a] - run.footx[first])*perc);
+//                     stats.otops = run.tops[a];
+//                     console.log( a + " STEPS = " + stats.steps + " otops=" + stats.otops + " top2=" + stats.top2 + " run.tops[" + first + "] = " + run.tops[first] + " run.tops[" + a + "] = " + run.tops[a] + " == stat.top = " + stats.top);
+//
+//
+//                 }
+//                 return;
+//
+//
+//             } else { //FOUND JUST ONE
+//                 alert("REALLY HOW?");
+//             }
+//             return;
+//         }
+//
+//     }
+//
+// }
 
-    var first = -1;
-    var second = 0;
-    for (var a = 0; a < list.length; a++) {
-        if (list[a][0] <= time) first = a;
-        else {
-
-            if (first >= 0) { //FOUND BEFORE AND AFTER
-
-                var perc = (time - list[first][0])/(list[a][0] - list[first][0]);
-
-                if (v) {
-                    stats.heel = (list[first][3] + (list[a][3] - list[first][3])*perc);
-                } else {
-                    stats.front = (list[first][4] + (list[a][4] - list[first][4])*perc);
-                    stats.fore = (list[first][3] + (list[a][3] - list[first][3])*perc);
-                    stats.side = (list[first][5] + (list[a][5] - list[first][5])*perc);
-                    stats.up = (list[first][6] + (list[a][6] - list[first][6])*perc);
-                    stats.time = list[first][2];
-
-                    stats.gpos2 = (list[first][13] + (list[a][13] - list[first][13])*perc);
-                    stats.footx2 = (list[first][14] + (list[a][14] - list[first][14])*perc);
-                    stats.footp = (list[first][15] + (list[a][15] - list[first][15])*perc);
-                    stats.front2 = (list[first][16] + (list[a][16] - list[first][16])*perc);
-                    stats.top2 = (list[first][17] + (list[a][17] - list[first][17])*perc);
-                    stats.gpos = (list[first][12] + (list[a][12] - list[first][12])*perc);
-
-                    stats.top = (run.tops[first] + (run.tops[a] - run.tops[first])*perc);
-                    stats.steps = run.steps[a];//(run.steps[first] + (run.steps[a] - run.steps[first])*perc);
-                    stats.stepsm = (run.stepsm[first] + (run.stepsm[a] - run.stepsm[first])*perc);
-                    stats.footx = (run.footx[first] + (run.footx[a] - run.footx[first])*perc);
-                    stats.otops = run.tops[a];
-                    console.log( a + " STEPS = " + stats.steps + " otops=" + stats.otops + " top2=" + stats.top2 + " run.tops[" + first + "] = " + run.tops[first] + " run.tops[" + a + "] = " + run.tops[a] + " == stat.top = " + stats.top);
-
-
-                }
-                return;
-
-
-            } else { //FOUND JUST ONE
-                alert("REALLY HOW?");
-            }
-            return;
-        }
-
-    }
-
-}
-
-App.prototype.interpolateAll = function (run, stats) {
-
-    var time = stats.timestamp/1000.0;
-    this.interpolate(time,run, run.fore,stats,0);
-    this.interpolate(time,run, run.heel,stats,1);
-
-
-}
+// App.prototype.interpolateAll = function (run, stats) {
+//
+//     var time = stats.timestamp/1000.0;
+//     this.interpolate(time,run, run.fore,stats,0);
+//     this.interpolate(time,run, run.heel,stats,1);
+//
+//
+// }
 
 App.prototype._start = function (t) {
     var that = this;

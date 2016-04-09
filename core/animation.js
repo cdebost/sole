@@ -256,7 +256,7 @@ var AnimationEasing = {
 		}
 	}
 
-function Animation(host, id, start, end, duration, frame_function, done_function, use_timer, easing, fps, auto_play, next)
+var Animation = exports.Animation = function Animation(host, id, start, end, duration, frame_function, done_function, use_timer, easing, fps, auto_play, next)
 {
     var that = this;
     this.id = id;

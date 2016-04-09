@@ -1,4 +1,5 @@
-var Montage = require("montage/core/core").Montage;
+var Montage = require("montage/core/core").Montage,
+    Promise = require("montage/core/promise").Promise;
 
 exports.Run = Montage.specialize({
     id: {
@@ -25,8 +26,19 @@ exports.Run = Montage.specialize({
         value: null
     },
 
+    _isDataLoadedDeferred: {
+        value: null
+    },
+
     isDataLoaded: {
-        value: false
+        get: function() {
+            return this._isDataLoadedDeferred.promise.isFulfilled();
+        },
+        set: function(loaded) {
+            if (loaded) {
+                this._isDataLoadedDeferred.resolve();
+            }
+        }
     },
 
     init: {
@@ -36,6 +48,7 @@ exports.Run = Montage.specialize({
             this.fore = [];
             this.heel = [];
             this.stats = {};
+            this._isDataLoadedDeferred = Promise.defer();
             return this;
         }
     },
@@ -57,6 +70,12 @@ exports.Run = Montage.specialize({
             this.date.setHours(d2[0]);
             this.date.setMinutes(d2[1]);
             this.date.setSeconds(d2[2]);
+        }
+    },
+
+    waitForDataToBeLoaded: {
+        value: function() {
+            return this._isDataLoadedDeferred.promise;
         }
     }
 });

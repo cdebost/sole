@@ -39,6 +39,32 @@
                 "bindings": {
                     "runs": {"<-": "@owner.runs"}
                 }
+            },
+
+            "controller": {
+                "prototype": "core/simulation-controller",
+                "bindings": {
+                    "run": {"<-": "@owner.selectedRun"}
+                }
+            },
+
+            "groundView": {
+                "prototype": "ui/ground-view.reel",
+                "properties": {
+                    "element": {"#": "groundView"},
+                    "controller": {"@": "controller"}
+                },
+                "bindings": {
+                    "run": {"<-": "@owner.selectedRun"}
+                }
+            },
+
+            "footView": {
+                "prototype": "ui/foot-view.reel",
+                "properties": {
+                    "element": {"#": "footView"},
+                    "controller": {"@": "controller"}
+                }
             }
         }
     </script>
@@ -48,80 +74,9 @@
         <div class=foot_outer>
             <div id=run_history class=run_history data-montage-id="runHistory"></div>
             <div data-status='paused' class=foot_cont>
-                <div id=groundb class=groundb>
-                    <div id=ground class=ground>
-
-                        <div id=shoe class=shoe></div>
-                    </div>
-                    <div id=run_title class=runtitle></div>
-                    <div id=run_date  class=rundate></div>
-                    <div id=v_time_in class=runtime>
-
-                    </div>
-                    <div class=runstepstitle>
-                        STEPS
-                    </div>
-                    <div id=v_steps_in class=runsteps>
-                    </div>
-
-                    <div class=runspmtitle>
-                        CADENCE
-                    </div>
-                    <div id=v_stepsm_in class=runsteps2>
-                    </div>
-
-                    <div class=runcadtitle>
-                        STRIKE
-                    </div>
-                    <div id=v_stepscad_in class=runsteps3>
-                    </div>
-
-                    <div id=accel class=accel></div>
-
-
-
-                </div>
+                <div data-montage-id="groundView" class=groundb></div>
                 <div class=spacer></div>
-                <div class=foot>
-                    <div id=sole_cont class=sole_cont>
-                        <img class=sole_blur src='/assets/sole2_blur.png'>
-                        <div id=sole class=sole></div>
-                    </div>
-
-
-                    <div id=v_forep class=fore_cont>
-                        <div id=v_forep_title class=data_title>
-                            FORE<br>
-                            PRESSURE
-                        </div>
-                        <div id=v_forep_in class=pressure_display>
-                            32.1
-                        </div>
-                    </div>
-
-                    <div id=v_heelp class=heel_cont>
-                        <div id=v_heelp_title class=data_title>
-                            HEEL<br>
-                            PRESSURE
-                        </div>
-                        <div id=v_heelp_in class=pressure_display>
-                            32.1
-                        </div>
-                    </div>
-                </div>
-                <div class=heel>
-                    <div id=sole_front_cont class=sole_front_cont>
-                        <div id=sole_front class=sole_front></div>
-                        <img id=sole_dialg src='/assets/svg_dial3.svg' class=sole_dialg />
-                        <img id=sole_dial src='/assets/svg_dial2.svg' class=sole_dial />
-                    </div>
-                    <div id=v_sidea class=pron_cont>
-                        <div id=v_sidea_in class=data_display>
-                            PRONATION
-                        </div>
-                    </div>
-
-                </div>
+                <div data-montage-id="footView"></div>
 
                 <input data-status=paused id=sole_fslider class='sole_slider_top frame' type='range' value="0" min='-40' max='40' list='runframes' oninput='APP.seekmini(this.value)'/>
                 <datalist id="runframes">
