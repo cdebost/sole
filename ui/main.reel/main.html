@@ -65,6 +65,14 @@
                     "element": {"#": "footView"},
                     "controller": {"@": "controller"}
                 }
+            },
+
+            "controls": {
+                "prototype": "ui/controls.reel",
+                "properties": {
+                    "element": {"#": "controls"},
+                    "controller": {"@": "controller"}
+                }
             }
         }
     </script>
@@ -77,31 +85,7 @@
                 <div data-montage-id="groundView" class=groundb></div>
                 <div class=spacer></div>
                 <div data-montage-id="footView"></div>
-
-                <input data-status=paused id=sole_fslider class='sole_slider_top frame' type='range' value="0" min='-40' max='40' list='runframes' oninput='APP.seekmini(this.value)'/>
-                <datalist id="runframes">
-                    <option value="-20">
-                    <option value="0">
-                    <option value="20">
-                </datalist>
-                <input data-status=paused id=sole_slider class=sole_slider_bottom type='range' value="500" min='0' max='1000' list='runclicks' oninput='APP.seek(this.value)'/>
-                <datalist id="runclicks">
-                    <option value="0">
-                    <option value="100">
-                    <option value="200">
-                    <option value="300">
-                    <option value="400">
-                    <option value="500">
-                    <option value="600">
-                    <option value="700">
-                    <option value="800">
-                    <option value="900">
-                    <option value="1000">
-                </datalist>
-                <!--div id=duration class=data_duration>
-
-                </div-->
-                <div id=go class=go onClick='APP.start(this)' ></div>
+                <div data-montage-id="controls"></div>
             </div>
             <div  class=data_side>
 

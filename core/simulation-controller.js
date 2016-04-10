@@ -73,7 +73,45 @@ exports.SimulationController = Target.specialize({
         }
     },
 
-    animation: {
+    _isPlaying: {
+        value: false
+    },
+
+    // TODO: FRB can't bind to getters? - in controls.reel
+    isPlaying: {
+        get: function() {
+            return this._isPlaying;
+        }
+    },
+
+    _isPaused: {
+        value: false
+    },
+
+    isPaused: {
+        get: function() {
+            return this._isPaused;
+        }
+    },
+
+    _currentTime: {
+        value: null
+    },
+
+    currentTime: {
+        get: function() {
+            if (!this._currentTime) {
+                this._currentTime = {
+                    minutes: 0,
+                    seconds: 0,
+                    hundredths: 0
+                };
+            }
+            return this._currentTime;
+        }
+    },
+
+    _animation: {
         value: null
     },
 
@@ -82,7 +120,7 @@ exports.SimulationController = Target.specialize({
             var self = this,
                 run = this.run,
                 stats = this.stats;
-            this.animation = new Animation(0, 0, 0, 1, run.duration, function (perc) {
+            this._animation = new Animation(0, 0, 0, 1, run.duration, function (perc) {
                 stats.timestamp = run.start + run.duration*perc;
 
                 self._interpolateAll();
@@ -98,10 +136,13 @@ exports.SimulationController = Target.specialize({
                     stats.front2 = self.level;
                 }
 
+                self._calcTime(perc);
+
                 self.dispatchEventNamed("frameUpdate", true, true, {
                     stats: stats,
                     run: run,
-                    perc: perc
+                    perc: perc,
+                    time: self.currentTime
                 });
 
                 return 1;
@@ -148,7 +189,7 @@ exports.SimulationController = Target.specialize({
                         stats.gpos = (list[first][12] + (list[a][12] - list[first][12])*perc);
 
                         stats.top = (run.tops[first] + (run.tops[a] - run.tops[first])*perc);
-                        stats.steps = run.steps[a];//(run.steps[first] + (run.steps[a] - run.steps[first])*perc);
+                        stats.steps = run.steps[a];
                         stats.stepsm = (run.stepsm[first] + (run.stepsm[a] - run.stepsm[first])*perc);
                         stats.footx = (run.footx[first] + (run.footx[a] - run.footx[first])*perc);
                         stats.otops = run.tops[a];
@@ -164,10 +205,52 @@ exports.SimulationController = Target.specialize({
         }
     },
 
-    toggle: {
+    _calcTime: {
+        value: function(perc) {
+            var mins = (this.run.duration/(1000*60))*perc;
+            var secs = (mins % 1)*60;
+            var huns = Math.floor((secs % 1)*100);
+            this.currentTime.minutes = Math.floor(mins);
+            this.currentTime.seconds = Math.floor(secs);
+            this.currentTime.hundredths = Math.floor(huns);
+        }
+    },
+
+    start: {
         value: function() {
-            this.animation.pauser = 1;
-            this.animation.pause();
+            this._animation.pauser = 1;
+            this._animation.pause();
+            console.log("start");
+            this._isPlaying = true;
+            this._isPaused = false;
+        }
+    },
+
+    stop: {
+        value: function() {
+            this._animation.pauser = 1;
+            this._animation.paused = 0;
+            this._animation.position = 0;
+            this._animation.pause();
+            this._animation.value = 0;
+            this._animation.pause();
+            this._isPlaying = false;
+            this._isPaused = false;
+        }
+    },
+
+    pause: {
+        value: function() {
+            this._animation.pause();
+            this._isPaused = true;
+        }
+    },
+
+    resume: {
+        value: function() {
+            this._animation.pauser = 1;
+            this._animation.pause();
+            this._isPaused = false;
         }
     }
 });

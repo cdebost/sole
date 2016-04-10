@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" href="controls.css">
+    <!--
+        TODO: Why does this get a "paused" class when the animation is playing?
+     -->
+    <script type="text/montage-serialization">
+    {
+        "owner": {
+            "properties": {
+                "element": {"#": "owner"},
+                "buttons": {"#": "buttons"}
+            },
+            "bindings": {
+                "classList.has('paused')": {"<-": "@owner.controller._isPlaying"}
+            }
+        },
+
+        "timer": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "timer"}
+            },
+            "bindings": {
+                "value": {"<-": "@owner._time"}
+            }
+        },
+
+        "toggleButton": {
+            "prototype": "montage/ui/button.reel",
+            "properties": {
+                "element": {"#": "toggleButton"}
+            },
+            "bindings": {
+                "label": {"<-": "@owner.controller._isPlaying ? 'STOP' : 'START'"}
+            },
+            "listeners": [
+                {
+                    "type": "action",
+                    "listener": {"@": "owner"}
+                }
+            ]
+        },
+
+        "pauseButton": {
+            "prototype": "montage/ui/button.reel",
+            "properties": {
+                "element": {"#": "pauseButton"},
+                "label": ""
+            },
+            "bindings": {
+                "classList.has('paused')": {"<-": "@owner.controller._isPaused"}
+            },
+            "listeners": [
+                {
+                    "type": "action",
+                    "listener": {"@": "owner"}
+                }
+            ]
+        }
+    }
+    </script>
+</head>
+<body>
+    <div data-montage-id="owner" class="Controls">
+        <div class="timer_cont" id="timer_cont">
+            <div data-montage-id="timer" class="timer"></div>
+        </div>
+        <div data-montage-id="buttons" class="buttons">
+            <div data-montage-id="pauseButton" class="pause"></div>
+            <div data-montage-id="toggleButton" class="go"></div>
+        </div>
+    </div>
+</body>
+</html>
