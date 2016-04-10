@@ -27,86 +27,15 @@
     border-radius:10px;
 
 }
-.pron_cont {
-    position:absolute;
-    bottom:-12px;
-    left:calc(50% - 50px);
-    box-sizing:border-box;
-    color:rgba(255,255,255,1.0);
-    font-weight:bold;
-    font-size:16px;
-    padding:5px;
-    text-align:center;
-    width:100px;
-    margin-bottom:20px;
-//  border:1px solid black;
-    border-radius:10px;
-
-}
-.heel_cont {
-    position:absolute;
-    left:27px;
-    bottom:65px;
-    box-sizing:border-box;
-    color:rgba(255,255,255,1.0);
-    font-weight:bold;
-    font-size:14px;
-    padding:5px;
-    padding-top:10px;
-    padding-left:0px;
-    padding-right:0px;
-    width:80px;
-    height:80px;
-    border-radius:40px;
-    dtom:20px;
-    border:2px solid rgba(255,255,255,.3);
-    background-color:rgba(255,255,255,.1);
-
-}
-
-.fore_cont {
-    position:absolute;
-    left:50px;
-    top:60px;
-    box-sizing:border-box;
-    color:rgba(255,255,255,1.0);
-    font-weight:bold;
-    font-size:14px;
-    padding:5px;
-    padding-top:10px;
-    padding-left:0px;
-    padding-right:0px;
-    width:80px;
-    height:80px;
-    border-radius:40px;
-    margin-bottom:20px;
-    border:2px solid rgba(255,255,255,.3);
-    background-color:rgba(255,255,255,.1);
-
-}
-.pressure_display {
-    box-sizing:border-box;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-size:20px;
 
 
-}
-
-.data_title {
-    box-sizing:border-box;
-    margin-bottom:5px;
-    color:rgba(255,255,255,.6);
-
-}
-
-.data_display {
-    box-sizing:border-box;
-    overflow: hidden;
-    text-overflow: ellipsis;
 
 
-}
+
+
+
+
+
 
 .data_duration {
     box-sizing:border-box;
@@ -156,13 +85,7 @@
 }
 
 
-.sole_cont {
-    position:relative;
-    margin:0px;
-    padding:0px;
 
-
-}
 .foot_cont {
     display:flex;
     position:relative;
@@ -177,28 +100,8 @@
     text-align:center;
 
 }
-.heel {
-    margin-top:20px;
-    width:200;
-    height:140px;
-    position:relative;
-    overflow:hidden;
-    display:inline-block;
-    iborder:1px solid blue;
-//background-color:blue;
 
-}
-.foot {
-    margin-top:20px;
-    width:200;
-    height:460px;
-    position:relative;
-    overflow:visible;
-    display:inline-block;
-// border:1px solid blue;
-//background-color:blue;
 
-}
 .clock {
     height:100px;
     position:relative;
@@ -231,78 +134,6 @@
 
 }
 
-.go {
-    background-image:-webkit-linear-gradient(bottom, rgba(0,0,0,1.0) 0%, rgba(49,160,240,.5) 100%);
-    border:2px solid rgba(49,160,240,.6);
-    box-sizing:border-box;
-    height:60px;
-    width:60px;
-    position:relative;
-    overflow:visible;
-    font-size:30px;
-    line-height:60px;
-    font-family:sans-serif;
-    text-align:center;
-    color:rgba(255,255,255,1.0);
-    margin-bottom:30px;
-    margin-top:20px;
-    border-radius:30px;
-    cursor:pointer;
-}
-.go:before {
-    content:"GO";
-    position:absolute;
-    left:0;
-    right:0;
-    top:0;
-    bottom:0;
-    display:block
-    text-align:center;
-    line-height:60px;
-    font-size:30px;
-}
-.go:hover {
-    border:2px solid rgba(255,255,255,.6);
-
-}
-
-.pause {
-    box-sizing:border-box;
-    height:60px;
-    width:60px;
-    position:relative;
-    overflow:visible;
-    font-size:15px;
-    line-height:60px;
-    font-family:sans-serif;
-    text-align:center;
-    color:rgba(255,255,255,1.0);
-    margin-bottom:30px;
-    margin-top:20px;
-    border-radius:30px;
-    border:2px solid rgba(255,255,0,1.0);
-    cursor:pointer;
-}
-
-
-.pause:before {
-    content:"PAUSE";
-    position:absolute;
-    left:0;
-    right:0;
-    top:0;
-    bottom:0;
-    display:block
-    text-align:center;
-    line-height:60px;
-    font-size:15px;
-}
-
-.pause:hover {
-    border:2px solid rgba(255,0,0,1.0);
-
-}
-
 
 
 
@@ -314,16 +145,7 @@
         height:375px;
 
     }
-    .foot {
-        transform-origin:50% 0%;
-        transform:scale(.8);
-        overflow:visible;
-        iheight:200px;
-        margin-top:5px;
-        position:absolute;
-        top:320px;
-        left:120px;
-    }
+
 
 
 }
@@ -362,25 +184,8 @@
     // transform:scale(.914);
 
     }
-    .heel {
-        position:absolute;
-        left:170px;
-        top:380px;
-        margin-top:5px;
-        transform-origin:50% 0%;
-        transform:scale(1.0);
 
-    }
-    .foot {
-        transform-origin:50% 0%;
-        transform:scale(.66);
-        overflow:visible;
-        iheight:200px;
-        margin-top:5px;
-        position:absolute;
-        top:222px;
-        left:10px;
-    }
+
 
     .groundb {
         transform-origin:0% 0%;
@@ -411,25 +216,8 @@
     // transform:scale(.914);
 
     }
-    .heel {
-        position:absolute;
-        left:140px;
-        top:340px;
-        margin-top:5px;
-        transform-origin:50% 0%;
-        transform:scale(.85);
 
-    }
-    .foot {
-        transform-origin:50% 0%;
-        transform:scale(.5);
-        overflow:visible;
-        iheight:200px;
-        margin-top:5px;
-        position:absolute;
-        top:222px;
-        left:0px;
-    }
+
 
     .groundb {
         transform-origin:0% 0%;
@@ -459,25 +247,7 @@
     // transform:scale(.914);
 
     }
-    .heel {
-        position:absolute;
-        left:110px;
-        top:270px;
-        margin-top:5px;
-        transform-origin:50% 0%;
-        transform:scale(.85);
 
-    }
-    .foot {
-        transform-origin:50% 0%;
-        transform:scale(.45);
-        overflow:visible;
-        iheight:200px;
-        margin-top:5px;
-        position:absolute;
-        top:180px;
-        left:-20px;
-    }
 
     .groundb {
         transform-origin:0% 0%;
@@ -537,81 +307,16 @@
 
 
 
-.sole_blur {
-    position:relative;
-    top:-20px;
-    left:-22px;
-    opacity:.3;
-    transform-origin:50% 50%;
-    transform:translate(1px, 0px) scale(1.03, 1.01);
 
-}
 
-.sole {
-    width:200px;
-    height:460px;
-    position:absolute;
-    overflow:hidden;
-    left:0px;
-    top:0px;
-// border:1px solid red;
-// background-color:yellow;
-//margin-bottom:30px;
-}
 
-.sole_dialg {
-    width:200px;
-    height:200px;
-    position:absolute;
-    top:0px;
-    left:0px;
-    transform-origin:50%, 50%;
-    z-index:2000;
-    opacity:.3;
 
-}
-.sole_dial {
-    width:200px;
-    height:200px;
-    position:absolute;
-    top:0px;
-    left:0px;
-    transform-origin:50%, 50%;
-    z-index:2001;
 
-}
 
-.sole_front_cont {
-    box-sizing:border-box;
-    width:200px;
-    height:200px;
-    iborder-radius:100px;
-    background-image:url(/assets/svg_meter.svg);
-    background-size:240px, 240px;
-    background-position:-20px -8px;
-    background-repeat:no-repeat;
-//border:1px solid red;
-    position:absolute;
-    overflow:visible;
-    left:0px;
-    ibottom:0px;
-    transform-origin:50%, 100%;
-//  background-color:orange;
 
-}
 
-.sole_front {
-    width:200px;
-    height:30px;
-    top:80px;
-    position:absolute;
-    overflow:visible;
-    left:0px;
-    ibottom:0px;
-    transform-origin:50%, 100%;
-//  background-color:orange;
 
-}
+
 
 .sole_side {
     width:40px;

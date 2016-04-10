@@ -179,25 +179,25 @@ App.prototype.setCSS = function (val, key, value) {
 }
 
 
-App.prototype.loadSVG = function (filen, parent, classname, callback) {
-    var that = this;
-
-    xhr = new XMLHttpRequest();
-    xhr.open("GET",filen,true);
-    xhr.overrideMimeType("image/svg+xml");
-
-    xhr.onload = function (e) {
-        var svg = xhr.responseXML.documentElement;
-        if (classname) svg.className = classname;
-
-        if (d = document.getElementById(parent)) {
-            d.appendChild(svg);
-
-        }
-        if (callback) callback(svg);
-    }
-    xhr.send("");
-}
+// App.prototype.loadSVG = function (filen, parent, classname, callback) {
+//     var that = this;
+//
+//     xhr = new XMLHttpRequest();
+//     xhr.open("GET",filen,true);
+//     xhr.overrideMimeType("image/svg+xml");
+//
+//     xhr.onload = function (e) {
+//         var svg = xhr.responseXML.documentElement;
+//         if (classname) svg.className = classname;
+//
+//         if (d = document.getElementById(parent)) {
+//             d.appendChild(svg);
+//
+//         }
+//         if (callback) callback(svg);
+//     }
+//     xhr.send("");
+// }
 
 
 
@@ -355,73 +355,73 @@ App.prototype.start2 = function () {
 
 
 }
-App.prototype.paintPressure = function (fore, heel, angle) {
-    if (!this.rows) this.rows = {};
-    this.heelp.innerHTML = Math.round(heel);
-    this.forep.innerHTML = Math.round(fore);
-
-    var base = angle - 130;
-    // var ang = angle < base ? base-angle
-    this.sidea.innerHTML = Math.floor(-(angle-128)*.3);
-    var delta = Math.abs((base/130) / (10.0 + (1.0-(base/130.0))*10.0));
-
-    var start = Math.floor(10.0 + (1.0-(Math.abs(base)/130.0))*10.0);
-    var duration = Math.floor(10.0 + (1.0-(Math.abs(base)/130.0))*10.0);
-
-    if (base < 0) start = 0;
-    else start = 20 - duration;
-
-    var take = fore;
-    if (heel > take) take = heel;
-
-    // console.log("DELTA base=" + base + " delta=" + delta);
-    for (var a = 0; a < 46; a++) {
-        var sd = 1.0;
-
-        for (var b = 0; b < 20; b++) {
-
-            if (!this.rows["c" + b + "_" + a + "_"]) this.rows["c" + b + "_" + a + "_"] = document.getElementById("c" + b + "_" + a + "_");
-
-            var r  = Math.floor((fore/100)*255.0*((46-a)/46.0));
-            if (r > 255) r = 255;
-            if (r < 0) r = 0;
-
-            var g  = Math.floor((heel/100)*255.0*((a)/46.0));
-            if (g > 255) g = 255;
-            if (g < 0) g = 0;
-
-            //var max = 0;
-            //if (r > max) max = r;
-            // if (g > max) max = g;
-
-
-            var index = b - start;
-            if (index < 0) index = 0;
-            if (base < 0) {
-                r = Math.floor(r*(1.0-(delta*index)));
-                g = Math.floor(g*(1.0-(delta*index)));
-                //console.log(base + " index=" + index  + " perc=" + (1.0-(delta*index)));
-            } else {
-                r = Math.floor(r*((1.0-delta*(duration-index))));
-                g = Math.floor(g*((1.0-delta*(duration-index))));
-                //console.log(base + " index=" + index  + " delta=" + delta + " perc=" + (1.0-delta*(duration-index)));
-
-            }
-
-            if (r < 0) r = 0;
-            if (g < 0) g = 0;
-            if (r < g) r = g;
-            var op = 1.0;//(max/255.0)*(1.0-(delta*b));
-            //if (op < 0) op = 0;
-
-            this.rows["c" + b + "_" + a + "_"].style.fill = "rgba(" + r + "," + g + ",0," + op + ")";
-            //sd -= delta;
-            //else console.log("no style " + a + " " + b);
-        }
-    }
-    //  console.log("fore pressure = " + fore);
-
-}
+// App.prototype.paintPressure = function (fore, heel, angle) {
+//     if (!this.rows) this.rows = {};
+//     this.heelp.innerHTML = Math.round(heel);
+//     this.forep.innerHTML = Math.round(fore);
+//
+//     var base = angle - 130;
+//     // var ang = angle < base ? base-angle
+//     this.sidea.innerHTML = Math.floor(-(angle-128)*.3);
+//     var delta = Math.abs((base/130) / (10.0 + (1.0-(base/130.0))*10.0));
+//
+//     var start = Math.floor(10.0 + (1.0-(Math.abs(base)/130.0))*10.0);
+//     var duration = Math.floor(10.0 + (1.0-(Math.abs(base)/130.0))*10.0);
+//
+//     if (base < 0) start = 0;
+//     else start = 20 - duration;
+//
+//     var take = fore;
+//     if (heel > take) take = heel;
+//
+//     // console.log("DELTA base=" + base + " delta=" + delta);
+//     for (var a = 0; a < 46; a++) {
+//         var sd = 1.0;
+//
+//         for (var b = 0; b < 20; b++) {
+//
+//             if (!this.rows["c" + b + "_" + a + "_"]) this.rows["c" + b + "_" + a + "_"] = document.getElementById("c" + b + "_" + a + "_");
+//
+//             var r  = Math.floor((fore/100)*255.0*((46-a)/46.0));
+//             if (r > 255) r = 255;
+//             if (r < 0) r = 0;
+//
+//             var g  = Math.floor((heel/100)*255.0*((a)/46.0));
+//             if (g > 255) g = 255;
+//             if (g < 0) g = 0;
+//
+//             //var max = 0;
+//             //if (r > max) max = r;
+//             // if (g > max) max = g;
+//
+//
+//             var index = b - start;
+//             if (index < 0) index = 0;
+//             if (base < 0) {
+//                 r = Math.floor(r*(1.0-(delta*index)));
+//                 g = Math.floor(g*(1.0-(delta*index)));
+//                 //console.log(base + " index=" + index  + " perc=" + (1.0-(delta*index)));
+//             } else {
+//                 r = Math.floor(r*((1.0-delta*(duration-index))));
+//                 g = Math.floor(g*((1.0-delta*(duration-index))));
+//                 //console.log(base + " index=" + index  + " delta=" + delta + " perc=" + (1.0-delta*(duration-index)));
+//
+//             }
+//
+//             if (r < 0) r = 0;
+//             if (g < 0) g = 0;
+//             if (r < g) r = g;
+//             var op = 1.0;//(max/255.0)*(1.0-(delta*b));
+//             //if (op < 0) op = 0;
+//
+//             this.rows["c" + b + "_" + a + "_"].style.fill = "rgba(" + r + "," + g + ",0," + op + ")";
+//             //sd -= delta;
+//             //else console.log("no style " + a + " " + b);
+//         }
+//     }
+//     //  console.log("fore pressure = " + fore);
+//
+// }
 
 // App.prototype.interpolate = function (time, run, list, stats, v) {
 //

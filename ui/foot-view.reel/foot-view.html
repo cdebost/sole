@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" href="foot-view.css">
+    <script type="text/montage-serialization">
+    {
+        "owner": {
+            "properties": {
+                "element": {"#": "owner"},
+                "soleDial": {"#": "soleDial"},
+                "soleDialg": {"#": "soleDialg"},
+                "sole": {"#": "sole"},
+                "soleFront": {"#": "soleFront"}
+            }
+        },
+
+        "forePressure": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "forePressure"}
+            },
+            "bindings": {
+                "value": {"<-": "@owner.controller.stats.fore"}
+            }
+        },
+
+        "heelPressure": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "heelPressure"}
+            },
+            "bindings": {
+                "value": {"<-": "@owner.controller.stats.heel"}
+            }
+        }
+    }
+    </script>
+</head>
+<body>
+    <div data-montage-id="owner" class="FootView">
+        <div class=foot>
+            <div id=sole_cont class=sole_cont>
+                <img class=sole_blur src='/assets/sole2_blur.png'>
+                <div data-montage-id="sole" class=sole></div>
+            </div>
+
+
+            <div id=v_forep class=fore_cont>
+                <div id=v_forep_title class=data_title>
+                    FORE<br>
+                    PRESSURE
+                </div>
+                <div data-montage-id="forePressure" class=pressure_display></div>
+            </div>
+
+            <div id=v_heelp class=heel_cont>
+                <div id=v_heelp_title class=data_title>
+                    HEEL<br>
+                    PRESSURE
+                </div>
+                <div data-montage-id="heelPressure" class=pressure_display></div>
+            </div>
+        </div>
+        <div class=heel>
+            <div id=sole_front_cont class=sole_front_cont>
+                <div data-montage-id="soleFront" class=sole_front></div>
+                <img data-montage-id="soleDialg" src='/assets/svg_dial3.svg' class=sole_dialg />
+                <img data-montage-id="soleDial" src='/assets/svg_dial2.svg' class=sole_dial />
+            </div>
+            <div id=v_sidea class=pron_cont>
+                <div id=v_sidea_in class=data_display>
+                    PRONATION
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

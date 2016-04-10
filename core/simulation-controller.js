@@ -100,42 +100,14 @@ exports.SimulationController = Target.specialize({
 
                 self.dispatchEventNamed("frameUpdate", true, true, {
                     stats: stats,
-                    run: run
+                    run: run,
+                    perc: perc
                 });
-
-                // <<<<  Lower part  >>>>
-                //
-                // self.sole_dial.style.transform = "rotate(" + (-20 +(40-(40*(stats.side/255))))*3 + "deg)";
-                // if (self.do_dial) {
-                //     self.sole_dialg.style.transform = "rotate(" + (-20 +(40-(40*(stats.side/255))))*3 + "deg)";
-                //     self.do_dial = 0;
-                // }
-                //
-                // self.sole_front.style.transform = "rotate(" + (-20 +(40-(40*(stats.side/255)))) + "deg)";
-                //
-                // self.paintPressure(stats.fore, stats.heel, stats.side);
-                //
-                // var min = (run.duration/(1000*60))*perc;
-                // var sec = (min - Math.floor(min))*60;
-                // var sec2 = Math.floor(sec);
-                // var hun = (sec - Math.floor(sec))*100;
-                // var hun2 = Math.floor(hun);
-                // self.left_timer["content"] = "\"" + Math.floor(min) + ":" + (sec2 < 10 ? "0" + sec2 : sec2) + ":" + (hun2 < 10 ? "0" + hun2 : hun2) + "\"";
-                //
-                // self.time.innerHTML = stats.time.substring(0,stats.time.indexOf("."));
-                //
-                // self.sole_slider.value = perc*1000;
-
 
                 return 1;
             }, function (callback) {
                 callback(0);
             }, 0, "Linear.None", 60, 0, 0);
-
-            g_play = function() {
-                self.animation.pauser = 1;
-                self.animation.pause();
-            }
         }
     },
 
@@ -189,6 +161,13 @@ exports.SimulationController = Target.specialize({
                     break;
                 }
             }
+        }
+    },
+
+    toggle: {
+        value: function() {
+            this.animation.pauser = 1;
+            this.animation.pause();
         }
     }
 });
