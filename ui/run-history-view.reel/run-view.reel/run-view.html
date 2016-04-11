@@ -38,7 +38,9 @@
             },
             "bindings": {
                 "stats": {"<-": "@owner.run.stats"},
-                "runId": {"<-": "@owner.run.id"}
+                "runId": {"<-": "@owner.run.id"},
+                "classList.has('hidden')": {"<-": "!@owner.shouldShowStats"},
+                "classList.has('selected')": {"<-": "@owner.classList.has('selected')"}
             }
         }
     }

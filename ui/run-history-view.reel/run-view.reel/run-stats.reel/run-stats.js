@@ -46,22 +46,27 @@ exports.RunStats = Component.specialize(/** @lends RunStats.prototype */{
                     content = self.templateObjects.statsDur.content;
                     self.templateObjects.statsDur.content = void 0;
                     self.templateObjects.statsDur.content = content;
+                    self.templateObjects.statsDurAverage.value = self.stats.dur.avg;
 
                     content = self.templateObjects.statsSte.content;
                     self.templateObjects.statsSte.content = void 0;
                     self.templateObjects.statsSte.content = content;
+                    self.templateObjects.statsSteAverage.value = self.stats.ste.avg;
 
                     content = self.templateObjects.statsSpm.content;
                     self.templateObjects.statsSpm.content = void 0;
                     self.templateObjects.statsSpm.content = content;
+                    self.templateObjects.statsSpmAverage.value = self.stats.spm.avg;
 
                     content = self.templateObjects.statsStr.content;
                     self.templateObjects.statsStr.content = void 0;
                     self.templateObjects.statsStr.content = content;
+                    self.templateObjects.statsStrAverage.value = self.stats.str.avg;
 
                     content = self.templateObjects.statsPro.content;
                     self.templateObjects.statsPro.content = void 0;
                     self.templateObjects.statsPro.content = content;
+                    self.templateObjects.statsProAverage.value = self.stats.pro.avg;
                 }
             });
         }
