@@ -1,4 +1,8 @@
 .Controls {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
 
 }
 
@@ -107,6 +111,25 @@
 
 .paused .go {
     left: 0;
+}
+
+.igo {
+    background-image:-webkit-linear-gradient(bottom, rgba(0,0,0,1.0) 0%, rgba(49,160,240,.5) 100%);
+    border:2px solid rgba(0,80,120,1.0);
+    box-sizing:border-box;
+    height:60px;
+    width:60px;
+    position:relative;
+    top:0;
+    overflow:visible;
+    font-size:12px;
+    line-height:60px;
+    font-family:sans-serif;
+    text-align:center;
+    color:rgba(255,255,255,1.0);
+    border-radius:28px;
+    cursor:pointer;
+    transition:all .3s ease-in;
 }
 
 @media screen and (max-width: 425px) {

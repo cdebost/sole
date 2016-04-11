@@ -59,6 +59,20 @@
                     "listener": {"@": "owner"}
                 }
             ]
+        },
+
+        "shareButton": {
+            "prototype": "montage/ui/button.reel",
+            "properties": {
+                "element": {"#": "shareButton"},
+                "label": "SHARE"
+            },
+            "listeners": [
+                {
+                    "type": "action",
+                    "listener": {"@": "owner"}
+                }
+            ]
         }
     }
     </script>
@@ -72,6 +86,7 @@
             <div data-montage-id="pauseButton" class="pause"></div>
             <div data-montage-id="toggleButton" class="go"></div>
         </div>
+        <div data-montage-id="shareButton" class="igo"></div>
     </div>
 </body>
 </html>

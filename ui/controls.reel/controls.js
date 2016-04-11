@@ -49,5 +49,19 @@ exports.Controls = Component.specialize(/** @lends Controls.prototype */{
                 this.controller.pause();
             }
         }
+    },
+
+    handleShareButtonAction: {
+        value: function() {
+            var win = function (d) {
+                console.log("data received");
+            };
+
+            var fail = function (e) {
+                console.log("data received");
+            };
+            var data = ["a","b","c"];
+            cordova.exec(win, fail, "PMRHybridPlugin", "shareData",[data]);
+        }
     }
 });
