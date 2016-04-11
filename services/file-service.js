@@ -31,5 +31,27 @@ exports.FileService = Montage.specialize({
                 });
             });
         }
+    },
+
+    loadSVG: {
+        value: function (fileName, parentElement, className) {
+            return new Promise(function(resolve) {
+                var xhr = new XMLHttpRequest();
+                xhr.open("GET", fileName, true);
+                xhr.overrideMimeType("image/svg+xml");
+
+                xhr.onload = function () {
+                    var svg = xhr.responseXML.documentElement;
+                    if (className) {
+                        svg.className = className;
+                    }
+                    if (parentElement) {
+                        parentElement.appendChild(svg);
+                    }
+                    resolve(svg);
+                };
+                xhr.send("");
+            });
+        }
     }
 });

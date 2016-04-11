@@ -2,7 +2,8 @@
  * @module "ui/foot-view.reel"
  */
 var Component = require("montage/ui/component").Component,
-    Promise = require("montage/core/promise").Promise;
+    Promise = require("montage/core/promise").Promise,
+    FileService = require("services/file-service").FileService;
 
 /**
  * @class FootView
@@ -32,35 +33,14 @@ exports.FootView = Component.specialize(/** @lends FootView.prototype */{
     templateDidLoad: {
         value: function() {
             var self = this;
+            var fileService = new FileService();
             Promise.all([
-                this._loadSVG("/assets/sole.svg", this.sole, 0),
-                this._loadSVG("/assets/sole_front4.svg", this.soleFront, 0)
+                fileService.loadSVG("/assets/sole.svg", this.sole, 0),
+                fileService.loadSVG("/assets/sole_front4.svg", this.soleFront, 0)
             ])
             .spread(function(sole, soleFront) {
                 self.sole = sole;
                 self.sole_front = soleFront;
-            });
-        }
-    },
-
-    _loadSVG: {
-        value: function (filen, parent, classname) {
-            return new Promise(function(resolve) {
-                var xhr = new XMLHttpRequest();
-                xhr.open("GET", filen, true);
-                xhr.overrideMimeType("image/svg+xml");
-
-                xhr.onload = function () {
-                    var svg = xhr.responseXML.documentElement;
-                    if (classname) {
-                        svg.className = classname;
-                    }
-                    if (parent) {
-                        parent.appendChild(svg);
-                    }
-                    resolve(svg);
-                };
-                xhr.send("");
             });
         }
     },
@@ -76,27 +56,8 @@ exports.FootView = Component.specialize(/** @lends FootView.prototype */{
     handleFrameUpdate: {
         value: function (event) {
             var stats = event.detail.stats,
-                run = event.detail.run,
-                perc = event.detail.perc;
-
-            this.soleDial.style.transform = "rotate(" + (-20 +(40-(40*(stats.side/255))))*3 + "deg)";
-            if (this.do_dial) { // TODO ??
-                this.soleDialg.style.transform = "rotate(" + (-20 +(40-(40*(stats.side/255))))*3 + "deg)";
-                this.do_dial = 0;
-            }
-
-            this.sole_front.style.transform = "rotate(" + (-20 +(40-(40*(stats.side/255)))) + "deg)";
-
-            this._paintPressure(stats.fore, stats.heel, stats.side);
-
-            var min = (run.duration/(1000*60))*perc;
-            var sec = (min - Math.floor(min))*60;
-            var sec2 = Math.floor(sec);
-            var hun = (sec - Math.floor(sec))*100;
-            var hun2 = Math.floor(hun);
-            // this.left_timer["content"] = "\"" + Math.floor(min) + ":" + (sec2 < 10 ? "0" + sec2 : sec2) + ":" + (hun2 < 10 ? "0" + hun2 : hun2) + "\"";
-
-            // this.sole_slider.value = perc*1000;
+                run = event.detail.run;
+            this._paintPressure(stats.fore, stats.heel, stats.side - run.level_side);
         }
     },
 
@@ -105,7 +66,6 @@ exports.FootView = Component.specialize(/** @lends FootView.prototype */{
             if (!this.rows) this.rows = {};
 
             var base = angle - 130;
-            // this.sidea.innerHTML = Math.floor(-(angle-128)*.3);
             var delta = Math.abs((base/130) / (10.0 + (1.0-(base/130.0))*10.0));
 
             var start = Math.floor(10.0 + (1.0-(Math.abs(base)/130.0))*10.0);

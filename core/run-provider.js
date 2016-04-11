@@ -189,8 +189,42 @@ exports.RunProvider = Montage.specialize({
                 t_footx = run.footx[a] = (instep ? -1 : 1);
 
                 run.stepsm[a] = steps_per_minute;
-
             }
+
+            var cnt = 0,
+                fronts = 0,
+                fronts_cnt = 0,
+                sides = 0;
+            while (cnt < run.fore.length) {
+                var runs = 0;
+
+                while ((cnt+runs < run.steps.length) && run.steps[cnt+runs] < 0) {
+                    runs++;
+                }
+                if (runs > 3) {
+                    var both = 0,
+                        h = 0,
+                        f = 0,
+                        ss = "";
+                    for (var r = cnt; r < cnt + runs; r++) {
+                        if (!f && (run.fore[r][3]*1.0 > 20)) f = 1;
+                        if (!h && (run.heel[r][3]*1.0 > 20)) h = 1;
+                        ss += "[" + run.fore[r][3] + "," + run.heel[r][3] + "]";
+                    }
+                    if (h && f) both = 1;
+                    var index = Math.floor(cnt + (runs/2));
+                    var front = (run.fore[index][4]-128)*.7;
+                    var side = run.fore[index][5];
+                    if (front != 0 && side != 0 && both) {
+                        fronts += front;
+                        sides += side;
+                        fronts_cnt++;
+                    }
+                    cnt += runs;
+                } else cnt++;
+            }
+            run.level_front = fronts/fronts_cnt;
+            run.level_side = (sides/fronts_cnt)-128;
 
             var dist = Math.floor(run.fore.length/4.0);
             run.stats.ste = [];

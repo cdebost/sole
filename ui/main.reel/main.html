@@ -67,6 +67,22 @@
                 }
             },
 
+            "sideView": {
+                "prototype": "ui/side-view.reel",
+                "properties": {
+                    "element": {"#": "sideView"},
+                    "controller": {"@": "controller"}
+                }
+            },
+
+            "heelView": {
+                "prototype": "ui/heel-view.reel",
+                "properties": {
+                    "element": {"#": "heelView"},
+                    "controller": {"@": "controller"}
+                }
+            },
+
             "controls": {
                 "prototype": "ui/controls.reel",
                 "properties": {
@@ -85,6 +101,8 @@
                 <div data-montage-id="groundView" class=groundb></div>
                 <div class=spacer></div>
                 <div data-montage-id="footView"></div>
+                <div data-montage-id="sideView"></div>
+                <div data-montage-id="heelView"></div>
                 <div data-montage-id="controls"></div>
             </div>
             <div  class=data_side>

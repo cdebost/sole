@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" href="heel-view.css">
+    <script type="text/montage-serialization">
+    {
+        "owner": {
+            "properties": {
+                "element": {"#": "owner"},
+                "soleDial": {"#": "soleDial"},
+                "soleDialg": {"#": "soleDialg"},
+                "soleFront": {"#": "soleFront"},
+                "sidea": {"#": "sidea"}
+            }
+        },
+
+        "sidea": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "sidea"}
+            },
+            "bindings": {
+                "value": {"<-": "@owner.sideValue"}
+            }
+        }
+    }
+    </script>
+</head>
+<body>
+    <div data-montage-id="owner" class="HeelView">
+        <div id="sole_front_cont" class="sole_front_cont">
+            <div data-montage-id="soleFront" class="sole_front"></div>
+            <img data-montage-id="soleDialg" src="/assets/svg_dial3.svg" class="sole_dialg">
+            <img data-montage-id="soleDial" src="/assets/svg_dial2.svg" class="sole_dial">
+        </div>
+        <div id="v_sidea" class="pron_cont">
+            <div data-montage-id="sidea" class="data_display"></div>
+        </div>
+    </div>
+</body>
+</html>
