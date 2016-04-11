@@ -133,7 +133,7 @@ exports.RunProvider = Montage.specialize({
 
                 // var fa2 = (fa-128)*.7;
 
-                if (heel > 20) fa = (this.level/.7)+128;
+                if (heel > 20) fa = 88;
 
 
                 if (onheel && instep && heel == 0 && fore == 0) {
@@ -359,6 +359,10 @@ exports.RunProvider = Montage.specialize({
                 var top = run.tops[a];
                 var f1 = fa;
                 var p2 = heel;
+                var strike = 0;
+                if (run.strikes[a] && run.strikes[a] != "none") strike = run.strikes[a];
+                var prone = 0;
+                if (run.prones[a] && run.prones[a] != "none") prone = run.prones[a];
 
                 if (foot_a1 == -1) {
                     if (!t_instep) {
@@ -410,6 +414,8 @@ exports.RunProvider = Montage.specialize({
                 run.fore[a][16] = f1;
                 run.fore[a][17] = top;
                 run.fore[a][18] = t_distance;
+                run.fore[a][19] = strike;
+                run.fore[a][20] = prone;
 
                 last_time = d;
             }

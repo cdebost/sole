@@ -32,6 +32,10 @@ exports.GroundView = Component.specialize(/** @lends GroundView.prototype */{
         value: null
     },
 
+    pronation: {
+        value: null
+    },
+
     enterDocument: {
         value: function(firstTime) {
             if (firstTime) {
@@ -42,7 +46,8 @@ exports.GroundView = Component.specialize(/** @lends GroundView.prototype */{
 
     handleFrameUpdate: {
         value: function(event) {
-            var stats = event.detail.stats;
+            var stats = event.detail.stats,
+                run = event.detail.run;
 
             var gpos = stats.gpos % 400;
             var gpos2 = stats.gpos2 % 1600;
@@ -52,8 +57,11 @@ exports.GroundView = Component.specialize(/** @lends GroundView.prototype */{
             this.acceleration.style.transform = "translateY(" + (-stats.up*.5) + "px)";
 
             var top2 = stats.top2;
-            if (Math.floor(stats.steps) < 0 || stats.heel > 20) {
+            if (Math.floor(stats.steps) < 0) {
+                stats.front2 = -28;
                 top2 = 168;
+            } else {
+                stats.front2 = (stats.front2-128)*.7;
             }
             if (top2 < -100) {
                 top2 = stats.top;
@@ -72,6 +80,19 @@ exports.GroundView = Component.specialize(/** @lends GroundView.prototype */{
             } else {
                 this.shoe.style.backgroundPosition = "0px 0px";
             }
+
+            var v = Math.abs(-20 + (40-(40*((stats.prone-run.level_side)/255))));
+            console.log(stats.prone, run.level_side);
+            var color = "";
+            if (v < 5) color = "0,255,0,1.0";
+            else if (v < 10) color = "188,255,0,1.0";
+            else if (v < 15) color = "255,255,0,1.0";
+            else if (v < 20) color = "255,203,0,1.0";
+            else if (v < 25) color = "255,125,0,1.0";
+            else if (v < 30) color = "255,87,0,1.0";
+            else color = "255,0,0,1.0";
+
+            this.pronation.style["backgroundImage"] = "-webkit-linear-gradient(" + (90-((-20 + (40-(40*((stats.prone-run.level_side)/255)))))) + "deg, rgba(" + color + ") 0%, rgba(" + color + ") 50%, rgba(100,100,100,1.0) 50%, rgba(100,100,100,1.0) 100%)";
         }
     }
 });

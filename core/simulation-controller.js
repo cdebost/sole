@@ -175,6 +175,7 @@ exports.SimulationController = Target.specialize({
                     if (v) {
                         stats.heel = (list[first][3] + (list[a][3] - list[first][3])*perc);
                     } else {
+                        stats.ofront = list[first][4];
                         stats.front = (list[first][4] + (list[a][4] - list[first][4])*perc);
                         stats.fore = (list[first][3] + (list[a][3] - list[first][3])*perc);
                         stats.side = (list[first][5] + (list[a][5] - list[first][5])*perc);
@@ -186,6 +187,8 @@ exports.SimulationController = Target.specialize({
                         stats.footp = (list[first][15] + (list[a][15] - list[first][15])*perc);
                         stats.front2 = (list[first][16] + (list[a][16] - list[first][16])*perc);
                         stats.top2 = (list[first][17] + (list[a][17] - list[first][17])*perc);
+                        stats.strike = list[a][19];
+                        stats.prone = list[a][20];
                         stats.gpos = (list[first][12] + (list[a][12] - list[first][12])*perc);
 
                         stats.top = (run.tops[first] + (run.tops[a] - run.tops[first])*perc);
@@ -193,7 +196,7 @@ exports.SimulationController = Target.specialize({
                         stats.stepsm = (run.stepsm[first] + (run.stepsm[a] - run.stepsm[first])*perc);
                         stats.footx = (run.footx[first] + (run.footx[a] - run.footx[first])*perc);
                         stats.otops = run.tops[a];
-                        console.log( a + " STEPS = " + stats.steps + " otops=" + stats.otops + " top2=" + stats.top2 + " run.tops[" + first + "] = " + run.tops[first] + " run.tops[" + a + "] = " + run.tops[a] + " == stat.top = " + stats.top);
+                        // console.log( a + " STEPS = " + stats.steps + " otops=" + stats.otops + " top2=" + stats.top2 + " run.tops[" + first + "] = " + run.tops[first] + " run.tops[" + a + "] = " + run.tops[a] + " == stat.top = " + stats.top);
                     }
 
                     break;
@@ -220,7 +223,6 @@ exports.SimulationController = Target.specialize({
         value: function() {
             this._animation.pauser = 1;
             this._animation.pause();
-            console.log("start");
             this._isPlaying = true;
             this._isPaused = false;
         }
