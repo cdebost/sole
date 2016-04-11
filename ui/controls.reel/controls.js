@@ -26,7 +26,6 @@ exports.Controls = Component.specialize(/** @lends Controls.prototype */{
 
     handleFrameUpdate: {
         value: function (event) {
-            // TODO: Do this as a binding
             var time = event.detail.time;
             this._time = (time.minutes < 10 ? "0" : "") + time.minutes + ":" + (time.seconds < 10 ? "0" : "") + time.seconds + ":" + (time.hundredths < 10 ? "0" : "") + time.hundredths;
         }

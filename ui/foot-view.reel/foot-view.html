@@ -21,7 +21,7 @@
                 "element": {"#": "forePressure"}
             },
             "bindings": {
-                "value": {"<-": "@owner.controller.stats.fore"}
+                "value": {"<-": "@owner.controller.stats.fore.round()"}
             }
         },
 
@@ -31,7 +31,7 @@
                 "element": {"#": "heelPressure"}
             },
             "bindings": {
-                "value": {"<-": "@owner.controller.stats.heel"}
+                "value": {"<-": "@owner.controller.stats.heel.round()"}
             }
         }
     }

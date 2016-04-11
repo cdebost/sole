@@ -28,6 +28,10 @@ exports.GroundView = Component.specialize(/** @lends GroundView.prototype */{
         value: null
     },
 
+    strike: {
+        value: null
+    },
+
     enterDocument: {
         value: function(firstTime) {
             if (firstTime) {
@@ -54,6 +58,8 @@ exports.GroundView = Component.specialize(/** @lends GroundView.prototype */{
             if (top2 < -100) {
                 top2 = stats.top;
             }
+
+            this.strike.value = Math.round(stats.front);
 
             this.shoe.style.transform = "scale(.25) translateX(" + Math.floor(stats.footp*3) + "px) translateY(" + Math.floor(top2) + "px) rotate(" + Math.floor(this.FUDGE_ANGLE + ((stats.front2))) + "deg)";
 
