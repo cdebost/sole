@@ -6,7 +6,7 @@
 
 }
 
-.timer_cont {
+.Controls .timer_cont {
     position: relative;
     width: calc(100% - 40px);
     height: 60px;
@@ -15,7 +15,7 @@
     font-size: 30px;
 }
 
-.timer {
+.Controls .timer {
     display: inline-block;
     padding: 10px;
     background-color: rgba(20, 20, 20, 1.0);
@@ -26,7 +26,7 @@
     font-weight: bold;
 }
 
-.buttons {
+.Controls .buttons {
     box-sizing: border-box;
     position: relative;
     width: 134px;
@@ -37,15 +37,15 @@
     margin-top: 20px;
 }
 
-.paused .buttons {
+.Controls.paused .buttons {
     width: 130px;
 }
 
-.paused .go, .paused .stop {
+.Controls.paused .go, .Controls.paused .stop {
     left: 0;
 }
 
-.pause {
+.Controls .pause {
     box-sizing: border-box;
     background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 1.0) 0%, rgba(49, 160, 240, .5) 100%);
     height: 60px;
@@ -66,12 +66,12 @@
     transition: all .3s ease-in;
 }
 
-.paused .pause {
+.Controls.paused .pause {
     left: 70px;
     opacity: 1.0;
 }
 
-.pause:before {
+.Controls .pause:before {
     content: "PAUSE";
     position: absolute;
     left: 0;
@@ -84,12 +84,12 @@
     font-size: 15px;
 }
 
-.pause.paused:before {
+.Controls .pause.paused:before {
     content: "CONTINUE";
     font-size: 10px;
 }
 
-.go {
+.Controls .go {
     background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 1.0) 0%, rgba(0, 0, 0, 1.0) 0%, rgba(49, 160, 240, .5) 100%);
     border: 2px solid rgba(0, 80, 120, 1.0);
     box-sizing: border-box;
@@ -109,11 +109,11 @@
     transition: all .3s ease-in;
 }
 
-.paused .go {
+.Controls.paused .go {
     left: 0;
 }
 
-.igo {
+.Controls .igo {
     background-image:-webkit-linear-gradient(bottom, rgba(0,0,0,1.0) 0%, rgba(49,160,240,.5) 100%);
     border:2px solid rgba(0,80,120,1.0);
     box-sizing:border-box;
@@ -133,19 +133,19 @@
 }
 
 @media screen and (max-width: 425px) {
-    .buttons {
+    .Controls .buttons {
         margin-top: 10px;
     }
 }
 
 @media screen and (max-width: 375px) {
-    .buttons {
+    .Controls .buttons {
         margin-top: 10px;
     }
 }
 
 @media screen and (max-width: 320px) {
-    .buttons {
+    .Controls .buttons {
         margin-top: 10px;
     }
 }

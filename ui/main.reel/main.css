@@ -7,8 +7,7 @@
     background-size:100px 100px;
     background-position:25px 25px;
     background-repeat:no-repeat;
-//background-color:rgba(100,100,100,1.0);
-    margin-bottom:0px;
+    margin-bottom:0;
     cursor:pointer;
     padding-left:160px;
     padding-top:40px;
@@ -25,17 +24,7 @@
     margin-bottom:20px;
     border:1px solid black;
     border-radius:10px;
-
 }
-
-
-
-
-
-
-
-
-
 
 .data_duration {
     box-sizing:border-box;
@@ -48,8 +37,6 @@
     color:rgba(255,255,255,.6);
     overflow: hidden;
     text-overflow: ellipsis;
-
-
 }
 
 .run_history {
@@ -64,7 +51,6 @@
     text-align:center;
     background-color:black;
     z-index:100px;
-
 }
 
 .foot_outer {
@@ -80,11 +66,7 @@
     flex-direction:row;
     flex-wrap:nowrap;
     text-align:center;
-
-
 }
-
-
 
 .foot_cont {
     display:flex;
@@ -98,7 +80,6 @@
     flex-direction:column;
     flex-wrap:wrap;
     text-align:center;
-
 }
 
 
@@ -124,32 +105,17 @@
     overflow:hidden;
     border-radius:10px;
     margin:5px;
-
-
 }
-
 
 .spacer {
-    height:0px;
-
+    height:0;
 }
-
-
-
-
-
-
 
 @media screen and (max-width: 800px) {
     .spacer {
         height:375px;
-
     }
-
-
-
 }
-
 
 @media screen and (max-width: 600px) {
     .foot_outer {
@@ -159,7 +125,6 @@
     .foot_cont {
         top:50px;
         transform:scale(100% / 410);
-
     }
     .run_history {
         position:absolute;
@@ -167,10 +132,10 @@
         height:50px;
     }
 }
+
 @media screen and (max-width: 425px) {
     .spacer {
         height:315px;
-
     }
 
     .go {
@@ -180,29 +145,21 @@
         top:50px;
         width:414px;
         overflow:hidden;
-    // transform-origin:0% 0%;
-    // transform:scale(.914);
-
     }
-
-
 
     .groundb {
         transform-origin:0% 0%;
-    //transform:scale(.914);
         height:200px;
         width:414px;
         max-height:200px;
-        background-position:0px -100px;
-        border-radius:0px;
+        background-position:0 -100px;
+        border-radius:0;
     }
 }
-
 
 @media screen and (max-width: 375px) {
     .spacer {
         height:235px;
-
     }
 
     .go {
@@ -212,28 +169,21 @@
         top:50px;
         width:375px;
         overflow:hidden;
-    // transform-origin:0% 0%;
-    // transform:scale(.914);
-
     }
-
-
 
     .groundb {
         transform-origin:0% 0%;
-    //transform:scale(.914);
         height:200px;
         width:375px;
         max-height:200px;
-        background-position:0px -100px;
-        border-radius:0px;
+        background-position:0 -100px;
+        border-radius:0;
     }
 }
 
 @media screen and (max-width: 320px) {
     .spacer {
         height:195px;
-
     }
 
     .go {
@@ -243,35 +193,22 @@
         top:50px;
         width:320px;
         overflow:hidden;
-    // transform-origin:0% 0%;
-    // transform:scale(.914);
-
     }
-
 
     .groundb {
         transform-origin:0% 0%;
-    //transform:scale(.914);
         height:175px;
         width:320px;
         max-height:200px;
-        background-position:0px -100px;
-        border-radius:0px;
+        background-position:0 -100px;
+        border-radius:0;
     }
 }
-
-
-
-
-
-
-
-
 
 .runspm {
     position:absolute;
     bottom:30px;
-    left:0px;
+    left:0;
     padding-left:15px;
     margin-top:3px;
     text-align:left;
@@ -279,15 +216,11 @@
     color:rgba(255,255,255,1.0);
     font-weight:bold;
     text-shadow:0 0 4px #000000;
-
 }
 
 .runspm.down {
     color:rgba(0,255,0,1.0);
 }
-
-
-
 
 .runscade{
     position:absolute;
@@ -300,33 +233,15 @@
     color:rgba(255,255,255,1.0);
     font-weight:bold;
     text-shadow:0 0 4px #000000;
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .sole_side {
     width:40px;
     height:460px;
     position:absolute;
     overflow:visible;
-    left:0px;
+    left:0;
     top:50px;
-//  background-color:blue;
-
 }
 
 .sole_slider_top {
@@ -342,13 +257,11 @@
     background-image:-webkit-linear-gradient(left, rgba(0,0,0,1.0) 0%, rgba(49,160,240,.3) 50%, rgba(0,0,0,1.0) 100%);
     border:1px solid rgba(49,160,240,.6);
     border-bottom:0;
-    border-bottom-left-radius:0px;
-    border-bottom-right-radius:0px;
+    border-bottom-left-radius:0;
+    border-bottom-right-radius:0;
     -webkit-appearance:none;
     transition:all .3s ease-in;
-
 }
-
 
 .sole_slider_top::-webkit-slider-thumb {
     -webkit-appearance: none;
@@ -357,20 +270,17 @@
     border-radius: 5px;
     background-image:url(/assets/svg_profilemyrunv_b.svg);
     background-size:24px 24px;
-    background-position:0px -2px;
+    background-position:0 -2px;
     background-repeat:no-repeat;
     border-radius:12px;
     background-color:rgba(0,0,0,1.0);
 
     cursor: pointer;
     margin-top: 1px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
-//box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; /* Add cool effects to your sliders! */
 }
 
-
-
 .sole_slider_top[data-status="playing"] {
-    height:0px;
+    height:0;
     overflow:hidden;
     disabled:true;
     opacity:0;
@@ -390,11 +300,10 @@
     background-color:rgba(20,20,20,1.0);
     background-image:-webkit-linear-gradient(left, rgba(0,0,0,1.0) 0%, rgba(49,160,240,.3) 50%, rgba(0,0,0,1.0) 100%);
     border:1px solid rgba(49,160,240,.6);
-    border-top-left-radius:0px;
-    border-top-right-radius:0px;
+    border-top-left-radius:0;
+    border-top-right-radius:0;
     border-top-style:dashed;
     -webkit-appearance:none;
-
 }
 
 .sole_slider_bottom::-webkit-slider-thumb {
@@ -404,14 +313,13 @@
     border-radius: 5px;
     background-image:url(/assets/svg_profilemyrunv_b.svg);
     background-size:24px 24px;
-    background-position:0px -2px;
+    background-position:0 -2px;
     background-repeat:no-repeat;
     border-radius:12px;
     background-color:rgba(0,0,0,1.0);
 
     cursor: pointer;
     margin-top: 1px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
-//box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; /* Add cool effects to your sliders! */
 }
 
 .sole_slider_bottom::before {
@@ -424,8 +332,6 @@
     left:10px;
     color:rgba(255,255,255,.3);
     z-index:10000;
-
-
 }
 
 .sole_slider_bottom::after {
@@ -437,24 +343,18 @@
     top:30px;
     left:calc(100% - 60px);
     icolor:rgba(255,255,255,.3);
-
-
 }
 .sole_slider_bottom[data-status="paused"] {
     border-top-style:dashed;
-    border-top-left-radius:0px;
-    border-top-right-radius:0px;
+    border-top-left-radius:0;
+    border-top-right-radius:0;
     color:rgba(255,255,255,.3);
-
-
 }
 .sole_slider_bottom[data-status="playing"] {
     border-top-style:solid;
     border-top-left-radius:6px;
     border-top-right-radius:6px;
     color:rgba(255,255,255,.6);
-
-
 }
 
 div[data-status="playing"] > .sole_slider.frame {
@@ -464,33 +364,23 @@ div[data-status="paused"] > .sole_slider.frame {
     display:none;
 }
 
-
-
-
 body {
     background-color:rgba(80,80,80,1.0);
     margin:0;padding:0;
-//background-image:url(images/apps_back.jpg);
     background-repeat:no-repeat;
-
-
 }
-
-
 
 .app_title {
     color:white;
     font-size:20px;
     font-weight:bold;
     white-space:nowrap;
-
 }
 
 .app_desc {
     width:200px;
     color:rgba(255,255,255,.6);
     font-size:14px;
-
 }
 
 .contents {
@@ -499,5 +389,4 @@ body {
     perspective: 1000px;
     tranform-style:preserve-3d;
     perspective-origin: 0% 50%;
-
 }

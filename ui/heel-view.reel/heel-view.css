@@ -8,7 +8,7 @@
     iborder: 1px solid blue;
 }
 
-.sole_front_cont {
+.HeelView .sole_front_cont {
     box-sizing: border-box;
     width: 200px;
     height: 200px;
@@ -24,7 +24,7 @@
     transform-origin: 50% 100%;
 }
 
-.sole_front {
+.HeelView .sole_front {
     width: 200px;
     height: 30px;
     top: 80px;
@@ -35,7 +35,7 @@
     transform-origin: 50% 100%;
 }
 
-.sole_dialg {
+.HeelView .sole_dialg {
     width: 200px;
     height: 200px;
     position: absolute;
@@ -46,7 +46,7 @@
     opacity: .3;
 }
 
-.sole_dial {
+.HeelView .sole_dial {
     width: 200px;
     height: 200px;
     position: absolute;
@@ -56,7 +56,7 @@
     z-index: 2001;
 }
 
-.pron_cont {
+.HeelView .pron_cont {
     position: absolute;
     bottom: -12px;
     left: calc(50% - 50px);
@@ -71,14 +71,14 @@
     border-radius: 10px;
 }
 
-.data_display {
+.HeelView .data_display {
     box-sizing: border-box;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
 @media screen and (max-width: 425px) {
-    .heel {
+    .HeelView .heel {
         position: absolute;
         left: 170px;
         top: 380px;
@@ -89,7 +89,7 @@
 }
 
 @media screen and (max-width: 375px) {
-    .heel {
+    .HeelView .heel {
         position: absolute;
         left: 140px;
         top: 340px;
@@ -100,7 +100,7 @@
 }
 
 @media screen and (max-width: 320px) {
-    .heel {
+    .HeelView .heel {
         position: absolute;
         left: 110px;
         top: 270px;

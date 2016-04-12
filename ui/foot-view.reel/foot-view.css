@@ -2,7 +2,7 @@
 
 }
 
-.foot {
+.FootView .foot {
     margin-top:20px;
     width:200px;
     height:460px;
@@ -11,13 +11,13 @@
     display:inline-block;
 }
 
-.sole_cont {
+.FootView .sole_cont {
     position:relative;
     margin:0;
     padding:0;
 }
 
-.sole_blur {
+.FootView .sole_blur {
     position:relative;
     top:-20px;
     left:-22px;
@@ -26,7 +26,7 @@
     transform:translate(1px, 0px) scale(1.03, 1.01);
 }
 
-.sole {
+.FootView .sole {
     width:200px;
     height:460px;
     position:absolute;
@@ -35,7 +35,7 @@
     top:0;
 }
 
-.fore_cont {
+.FootView .fore_cont {
     position:absolute;
     left:50px;
     top:60px;
@@ -55,7 +55,7 @@
     background-color:rgba(255,255,255,.1);
 }
 
-.heel_cont {
+.FootView .heel_cont {
     position:absolute;
     left:27px;
     bottom:65px;
@@ -76,20 +76,20 @@
 
 }
 
-.data_title {
+.FootView .data_title {
     box-sizing:border-box;
     margin-bottom:5px;
     color:rgba(255,255,255,.6);
 }
 
-.pressure_display {
+.FootView .pressure_display {
     box-sizing:border-box;
     overflow: hidden;
     text-overflow: ellipsis;
     font-size:20px;
 }
 
-.heel {
+.FootView .heel {
     margin-top:20px;
     width:200;
     height:140px;
@@ -99,7 +99,7 @@
     iborder:1px solid blue;
 }
 
-.sole_front_cont {
+.FootView .sole_front_cont {
     box-sizing:border-box;
     width:200px;
     height:200px;
@@ -115,7 +115,7 @@
     transform-origin:50%, 100%;
 }
 
-.sole_front {
+.FootView .sole_front {
     width:200px;
     height:30px;
     top:80px;
@@ -126,7 +126,7 @@
     transform-origin:50%, 100%;
 }
 
-.sole_dialg {
+.FootView .sole_dialg {
     width:200px;
     height:200px;
     position:absolute;
@@ -137,7 +137,7 @@
     opacity:.3;
 }
 
-.sole_dial {
+.FootView .sole_dial {
     width:200px;
     height:200px;
     position:absolute;
@@ -147,7 +147,7 @@
     z-index:2001;
 }
 
-.pron_cont {
+.FootView .pron_cont {
     position:absolute;
     bottom:-12px;
     left:calc(50% - 50px);
@@ -162,14 +162,14 @@
     border-radius:10px;
 }
 
-.data_display {
+.FootView .data_display {
     box-sizing:border-box;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
 @media screen and (max-width: 800px) {
-    .foot {
+    .FootView .foot {
         transform-origin:50% 0%;
         transform:scale(.8);
         overflow:visible;
@@ -182,7 +182,7 @@
 }
 
 @media screen and (max-width: 425px) {
-    .foot {
+    .FootView .foot {
         transform-origin:50% 0%;
         transform:scale(.66);
         overflow:visible;
@@ -193,7 +193,7 @@
         left:10px;
     }
 
-    .heel {
+    .FootView .heel {
         position:absolute;
         left:170px;
         top:380px;
@@ -204,7 +204,7 @@
 }
 
 @media screen and (max-width: 375px) {
-    .foot {
+    .FootView .foot {
         transform-origin:50% 0%;
         transform:scale(.5);
         overflow:visible;
@@ -215,7 +215,7 @@
         left:0px;
     }
 
-    .heel {
+    .FootView .heel {
         position:absolute;
         left:140px;
         top:340px;
@@ -226,7 +226,7 @@
 }
 
 @media screen and (max-width: 320px) {
-    .foot {
+    .FootView .foot {
         transform-origin:50% 0%;
         transform:scale(.45);
         overflow:visible;
@@ -237,7 +237,7 @@
         left:-20px;
     }
 
-    .heel {
+    .FootView .heel {
         position:absolute;
         left:110px;
         top:270px;

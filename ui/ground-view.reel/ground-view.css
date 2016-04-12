@@ -2,7 +2,7 @@
 
 }
 
-.ground {
+.GroundView .ground {
     position:absolute;
     top:158px;
     left:0;
@@ -13,14 +13,13 @@
     background-repeat:repeat-x;
 }
 
-.shoe {
+.GroundView .shoe {
     width:528px;
     height:394px;
     position:absolute;
     overflow:visible;
     left:-140px;
     top:-218px;
-// background-color:yellow;
     background-image:url(/assets/shoe3.all.png);
     background-size:528px 1576px;
     background-repeat:no-repeat;
@@ -49,7 +48,7 @@
     text-shadow:0 0 4px #000000;
 }
 
-.runtime {
+.GroundView .runtime {
     position:absolute;
     top:12px;
     right:15px;
@@ -62,7 +61,7 @@
     text-shadow:0 0 4px #000000;
 }
 
-.runstepstitle {
+.GroundView .runstepstitle {
     position:absolute;
     bottom:46px;
     left:0;
@@ -75,7 +74,7 @@
     text-shadow:0 0 4px #000000;
 }
 
-.runsteps {
+.GroundView .runsteps {
     position:absolute;
     bottom:30px;
     left:0;
@@ -88,11 +87,11 @@
     text-shadow:0 0 4px #000000;
 }
 
-.runsteps.down {
+.GroundView .runsteps.down {
     color:rgba(0,255,0,1.0);
 }
 
-.runspmtitle {
+.GroundView .runspmtitle {
     position:absolute;
     bottom:46px;
     left:50px;
@@ -105,7 +104,7 @@
     text-shadow:0 0 4px #000000;
 }
 
-.runcadtitle {
+.GroundView .runcadtitle {
     position:absolute;
     bottom:46px;
     left:117px;
@@ -118,7 +117,7 @@
     text-shadow:0 0 4px #000000;
 }
 
-.runprotitle {
+.GroundView .runprotitle {
     position:absolute;
     bottom:46px;
     left:174px;
@@ -132,7 +131,7 @@
 }
 
 
-.runsteps2 {
+.GroundView .runsteps2 {
     position:absolute;
     bottom:30px;
     left:50px;
@@ -145,7 +144,7 @@
     text-shadow:0 0 4px #000000;
 }
 
-.runsteps3 {
+.GroundView .runsteps3 {
     position:absolute;
     bottom:30px;
     left:120px;
@@ -158,7 +157,7 @@
     text-shadow:0 0 4px #000000;
 }
 
-.runsteps4 {
+.GroundView .runsteps4 {
     position: absolute;
     bottom: 30px;
     left: 175px;
@@ -174,7 +173,7 @@
     itext-shadow: 0 0 4px #000000;
 }
 
-.accel {
+.GroundView .accel {
     position:absolute;
     height:5px;
     width:64px;
@@ -186,67 +185,67 @@
 }
 
 @media screen and (max-width: 425px) {
-    .ground {
+    .GroundView .ground {
         top:62px;
         width:414px;
     }
 
-    .runstepstitle {
+    .GroundView .runstepstitle {
         bottom:42px;
     }
 
-    .runsteps, .runsteps2, .runsteps3 {
+    .GroundView .runsteps, .GroundView .runsteps2, .GroundView .runsteps3 {
         bottom:26px;
     }
 
-    .runcadtitle {
+    .GroundView .runcadtitle {
         bottom:42px;
 
     }
-    .runspmtitle {
+    .GroundView .runspmtitle {
         bottom:42px;
     }
 }
 
 @media screen and (max-width: 375px) {
-    .ground {
+    .GroundView .ground {
         top:62px;
     }
 
-    .runstepstitle {
+    .GroundView .runstepstitle {
         bottom:42px;
     }
 
-    .runsteps, .runsteps2, .runsteps3 {
+    .GroundView .runsteps, .GroundView .runsteps2, .GroundView .runsteps3 {
         bottom:26px;
     }
 
-    .runcadtitle {
+    .GroundView .runcadtitle {
         bottom:42px;
     }
-    .runspmtitle {
+    .GroundView .runspmtitle {
         bottom:42px;
     }
 }
 
 @media screen and (max-width: 320px) {
-    .ground {
+    .GroundView .ground {
         top:62px;
         width:320px;
     }
 
-    .runstepstitle {
+    .GroundView .runstepstitle {
         bottom:20px;
     }
 
-    .runsteps, .runsteps2, .runsteps3 {
+    .GroundView .runsteps, .GroundView .runsteps2, .GroundView .runsteps3 {
         bottom:5px;
     }
 
-    .runcadtitle {
+    .GroundView .runcadtitle {
         bottom:20px;
     }
-    .runspmtitle {
+    .GroundView .runspmtitle {
         bottom:20px;
     }
 }

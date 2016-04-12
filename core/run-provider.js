@@ -20,7 +20,7 @@ exports.RunProvider = Montage.specialize({
     },
 
     /**
-     * Populate the data of a given run. The run should contain an id
+     * Populate the data of a given run. The run should contain an id.
      */
     loadRunData: {
         value: function(run) {
