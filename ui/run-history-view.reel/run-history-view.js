@@ -17,5 +17,11 @@ exports.RunHistoryView = Component.specialize(/** @lends RunHistoryView.prototyp
         value: function() {
             this._isMenuOpen = !this._isMenuOpen;
         }
+    },
+    
+    handleNewRunButtonAction: {
+        value: function() {
+            // TODO
+        }
     }
 });
