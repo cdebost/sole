@@ -1,8 +1,7 @@
 /**
  * @module "ui/side-view.reel"
  */
-var Component = require("montage/ui/component").Component,
-    FileService = require("services/file-service").FileService;
+var Component = require("montage/ui/component").Component;
 
 /**
  * @class SideView
@@ -10,6 +9,10 @@ var Component = require("montage/ui/component").Component,
  */
 exports.SideView = Component.specialize(/** @lends SideView.prototype */{
     controller: {
+        value: null
+    },
+
+    fileService: {
         value: null
     },
 
@@ -23,9 +26,8 @@ exports.SideView = Component.specialize(/** @lends SideView.prototype */{
 
     templateDidLoad: {
         value: function () {
-            var self = this,
-                fileService = new FileService();
-            fileService.loadSVG("/assets/shoe_side.svg", this.sideCont)
+            var self = this;
+            this.fileService.loadSVG("/assets/shoe_side.svg", this.sideCont)
             .then(function(svg) {
                 self.shoe = svg;
             });

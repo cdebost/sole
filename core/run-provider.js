@@ -8,15 +8,8 @@ require("core/cubic");
 require("core/animation");
 
 exports.RunProvider = Montage.specialize({
-    _fileService: {
+    fileService: {
         value: null
-    },
-
-    init: {
-        value: function(fileService) {
-            this._fileService = fileService;
-            return this;
-        }
     },
 
     /**
@@ -42,7 +35,7 @@ exports.RunProvider = Montage.specialize({
     _loadForeData: {
         value: function(run) {
             var self = this;
-            return this._fileService.readCSV("runs/" + run.id + "/fore.csv")
+            return this.fileService.readCSV("runs/" + run.id + "/fore.csv")
                 .then(function (ret) {
                     var data = ret.split("\n");
                     for (var i = 1; i < data.length; ++i) {
@@ -56,7 +49,7 @@ exports.RunProvider = Montage.specialize({
     _loadHeelData: {
         value: function(run) {
             var self = this;
-            return this._fileService.readCSV("runs/" + run.id + "/heel.csv")
+            return this.fileService.readCSV("runs/" + run.id + "/heel.csv")
                 .then(function(ret) {
                     var data = ret.split("\n");
                     for (var i = 1; i < data.length; ++i) {
@@ -420,8 +413,8 @@ exports.RunProvider = Montage.specialize({
                 last_time = d;
             }
         }
-    }
-}, {
+    },
+
     /**
      * Returns the minimum information for all stored runs. This information will not include the actual run data,
      * that will need to be loaded after.

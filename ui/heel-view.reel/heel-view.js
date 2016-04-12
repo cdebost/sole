@@ -1,8 +1,7 @@
 /**
  * @module "ui/heel-view.reel"
  */
-var Component = require("montage/ui/component").Component,
-    FileService = require("services/file-service").FileService;
+var Component = require("montage/ui/component").Component;
 
 /**
  * @class HeelView
@@ -10,6 +9,10 @@ var Component = require("montage/ui/component").Component,
  */
 exports.HeelView = Component.specialize(/** @lends HeelView.prototype */{
     controller: {
+        value: null
+    },
+
+    fileService: {
         value: null
     },
 
@@ -35,9 +38,8 @@ exports.HeelView = Component.specialize(/** @lends HeelView.prototype */{
 
     templateDidLoad: {
         value: function() {
-            var self = this,
-                fileService = new FileService();
-            fileService.loadSVG("/assets/sole_front4b.svg", this.soleFront)
+            var self = this;
+            this.fileService.loadSVG("/assets/sole_front4b.svg", this.soleFront)
             .then(function(svg) {
                  self.sole_front = svg;
             });

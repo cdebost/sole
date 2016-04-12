@@ -2,8 +2,6 @@
  * @module ui/main.reel
  */
 var Component = require("montage/ui/component").Component,
-    RunProvider = require("core/run-provider").RunProvider,
-    FileService = require("services/file-service").FileService,
     Application = require("montage/core/application").Application;
 
 require("core/iscroll_zoom");
@@ -21,14 +19,17 @@ exports.Main = Component.specialize(/** @lends Main# */ {
         value: null
     },
 
-    _runProvider: {
+    fileService: {
+        value: null
+    },
+
+    runProvider: {
         value: null
     },
 
     enterDocument: {
         value: function(firstTime) {
             if (firstTime) {
-                this._runProvider = new RunProvider().init(new FileService());
                 this.addPathChangeListener("selectedRun", this.handleSelectedRunChanged.bind(this));
                 this._loadRunPrototypes();
                 this.runs.select(this.runs.content[3]);
@@ -47,7 +48,7 @@ exports.Main = Component.specialize(/** @lends Main# */ {
     _loadRunPrototypes: {
         value: function() {
             var self = this;
-            RunProvider.dataPrototypes.forEach(function(proto) {
+            this.runProvider.dataPrototypes.forEach(function(proto) {
                  self.runs.add(proto);
             });
         }
@@ -58,7 +59,7 @@ exports.Main = Component.specialize(/** @lends Main# */ {
             if (run.isDataLoaded) {
                 return;
             }
-            this._runProvider.loadRunData(run)
+            this.runProvider.loadRunData(run)
             .then(function() {
                 Application.prototype.dispatchEventNamed("runDataLoaded", true, true, {
                     runId: run.id

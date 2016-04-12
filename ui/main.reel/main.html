@@ -17,10 +17,23 @@
             "owner": {
                 "properties": {
                     "element": {"#": "main"},
-                    "runs": {"@": "runs"}
+                    "runs": {"@": "runs"},
+                    "fileService": {"@": "fileService"},
+                    "runProvider": {"@": "runProvider"}
                 },
                 "bindings": {
                     "selectedRun": {"<-": "@runs.selection.0"}
+                }
+            },
+
+            "fileService": {
+                "prototype": "services/file-service"
+            },
+
+            "runProvider": {
+                "prototype": "core/run-provider",
+                "properties": {
+                    "fileService": {"@": "fileService"}
                 }
             },
 
@@ -63,7 +76,8 @@
                 "prototype": "ui/foot-view.reel",
                 "properties": {
                     "element": {"#": "footView"},
-                    "controller": {"@": "controller"}
+                    "controller": {"@": "controller"},
+                    "fileService": {"@": "fileService"}
                 }
             },
 
@@ -71,7 +85,8 @@
                 "prototype": "ui/side-view.reel",
                 "properties": {
                     "element": {"#": "sideView"},
-                    "controller": {"@": "controller"}
+                    "controller": {"@": "controller"},
+                    "fileService": {"@": "fileService"}
                 }
             },
 
@@ -79,7 +94,8 @@
                 "prototype": "ui/heel-view.reel",
                 "properties": {
                     "element": {"#": "heelView"},
-                    "controller": {"@": "controller"}
+                    "controller": {"@": "controller"},
+                    "fileService": {"@": "fileService"}
                 }
             },
 

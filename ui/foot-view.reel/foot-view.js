@@ -2,8 +2,7 @@
  * @module "ui/foot-view.reel"
  */
 var Component = require("montage/ui/component").Component,
-    Promise = require("montage/core/promise").Promise,
-    FileService = require("services/file-service").FileService;
+    Promise = require("montage/core/promise").Promise;
 
 /**
  * @class FootView
@@ -11,6 +10,10 @@ var Component = require("montage/ui/component").Component,
  */
 exports.FootView = Component.specialize(/** @lends FootView.prototype */{
     controller: {
+        value: null
+    },
+
+    fileService: {
         value: null
     },
 
@@ -33,10 +36,9 @@ exports.FootView = Component.specialize(/** @lends FootView.prototype */{
     templateDidLoad: {
         value: function() {
             var self = this;
-            var fileService = new FileService();
             Promise.all([
-                fileService.loadSVG("/assets/sole.svg", this.sole, 0),
-                fileService.loadSVG("/assets/sole_front4.svg", this.soleFront, 0)
+                this.fileService.loadSVG("/assets/sole.svg", this.sole, 0),
+                this.fileService.loadSVG("/assets/sole_front4.svg", this.soleFront, 0)
             ])
             .spread(function(sole, soleFront) {
                 self.sole = sole;
